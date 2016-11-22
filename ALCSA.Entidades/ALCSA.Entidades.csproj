@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F6A0B5E6-FAFE-4C64-A0B5-0781EC6C4D5B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ALCSA.Entidades</RootNamespace>
+    <AssemblyName>ALCSA.Entidades</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abonos\AbonoCheque.cs" />
+    <Compile Include="AdministracionSitio\Usuario.cs" />
+    <Compile Include="Alzamientos\Actividad.cs" />
+    <Compile Include="Alzamientos\Alzamiento.cs" />
+    <Compile Include="Alzamientos\AlzamientoActividad.cs" />
+    <Compile Include="Alzamientos\EstadoAlzamiento.cs" />
+    <Compile Include="Alzamientos\Observacion.cs" />
+    <Compile Include="Alzamientos\Remesa.cs" />
+    <Compile Include="Base.cs" />
+    <Compile Include="CallCenter\AdicionalComentario.cs" />
+    <Compile Include="CallCenter\Campana.cs" />
+    <Compile Include="CallCenter\CampanaCobranza.cs" />
+    <Compile Include="CallCenter\Comentario.cs" />
+    <Compile Include="CallCenter\Disposicion.cs" />
+    <Compile Include="CallCenter\TipoDisposicion.cs" />
+    <Compile Include="CargasMasivas\Proceso.cs" />
+    <Compile Include="CargasMasivas\Registro.cs" />
+    <Compile Include="Cobranzas\ActividadExhorto.cs" />
+    <Compile Include="Cobranzas\Bitacora.cs" />
+    <Compile Include="Cobranzas\Cobranza.cs" />
+    <Compile Include="Cobranzas\CuotaColegio.cs" />
+    <Compile Include="Cobranzas\DocumentoEstandard1.cs" />
+    <Compile Include="Cobranzas\DocumentoEstandard2.cs" />
+    <Compile Include="Cobranzas\DocumentoEstandard3.cs" />
+    <Compile Include="Cobranzas\DocumentoEstandard4.cs" />
+    <Compile Include="Cobranzas\DocumentoJuicio.cs" />
+    <Compile Include="Cobranzas\DocumentoPagare.cs" />
+    <Compile Include="Cobranzas\Mutuo.cs" />
+    <Compile Include="Cobranzas\Remesa.cs" />
+    <Compile Include="Deudor.cs" />
+    <Compile Include="Documentos\CobranzaLista.cs" />
+    <Compile Include="Documentos\DatosFormatos\Juicio.cs" />
+    <Compile Include="Documentos\Fisicos\CodigoBarra.cs" />
+    <Compile Include="Documentos\Fisicos\Documento.cs" />
+    <Compile Include="Documentos\Fisicos\Identificador.cs" />
+    <Compile Include="Documentos\Fisicos\TipoDocumento.cs" />
+    <Compile Include="Documentos\Fisicos\TipoIdentificador.cs" />
+    <Compile Include="Gastos\GastoCobranza.cs" />
+    <Compile Include="Gestion\ControlRiesgo.cs" />
+    <Compile Include="Gestion\Metricas\ParametroGeneral.cs" />
+    <Compile Include="Gestion\Metricas\PlazoCobranzaCliente.cs" />
+    <Compile Include="Gestion\Metricas\PlazoCobranzaTramite.cs" />
+    <Compile Include="Juicios\ActividadJudicial.cs" />
+    <Compile Include="Juicios\Juicio.cs" />
+    <Compile Include="Juicios\Riesgo.cs" />
+    <Compile Include="Parametros\Entradas\Cobranzas\ListadoDemanda.cs" />
+    <Compile Include="Parametros\Entradas\Juicios\JuicioEstado.cs" />
+    <Compile Include="Parametros\Entradas\Metricas\ListadoTramite.cs" />
+    <Compile Include="Parametros\Salidas\Cobranzas\ListadoDemanda.cs" />
+    <Compile Include="Parametros\Salidas\Cobranzas\Mutuo\BienRaiz.cs" />
+    <Compile Include="Parametros\Salidas\Domicilios\Basico.cs" />
+    <Compile Include="Parametros\Salidas\Metricas\AvanceEtapa.cs" />
+    <Compile Include="Parametros\Salidas\Metricas\AvanceTramite.cs" />
+    <Compile Include="Parametros\Salidas\Metricas\Cumplimiento.cs" />
+    <Compile Include="Parametros\Salidas\Metricas\EntidadPlazoCliente.cs" />
+    <Compile Include="Parametros\Salidas\Metricas\EstadoBaseCobranza.cs" />
+    <Compile Include="Parametros\Salidas\Metricas\EstadoCliente.cs" />
+    <Compile Include="Parametros\Salidas\Metricas\EstadoClienteCobranza.cs" />
+    <Compile Include="Parametros\Salidas\Metricas\EstadoProcurador.cs" />
+    <Compile Include="Parametros\Salidas\Metricas\EstadoProcuradorCobranza.cs" />
+    <Compile Include="Parametros\Salidas\Metricas\ResumenProcurador.cs" />
+    <Compile Include="Parametros\Salidas\Metricas\Tramite.cs" />
+    <Compile Include="Parametros\Salidas\Metricas\TramiteCobranzaTerminada.cs" />
+    <Compile Include="Parametros\Salidas\Personas\Basico.cs" />
+    <Compile Include="Procuradores\Metas\Meta.cs" />
+    <Compile Include="Procuradores\Procurador.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Requerimientos\Estado.cs" />
+    <Compile Include="Requerimientos\HistoricoRequerimiento.cs" />
+    <Compile Include="Requerimientos\Observacion.cs" />
+    <Compile Include="Requerimientos\Requerimiento.cs" />
+    <Compile Include="Requerimientos\Usuario.cs" />
+    <Compile Include="Temporales\Temporal.cs" />
+    <Compile Include="Tramites\SubTramite.cs" />
+    <Compile Include="Tramites\Tramite.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

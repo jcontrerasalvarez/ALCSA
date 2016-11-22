@@ -1,0 +1,3280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{091AF1B8-841E-4709-B11C-7CA5450E4BC3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CobranzaALC</RootNamespace>
+    <AssemblyName>CobranzaALC</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\packages\AjaxControlToolkit.15.1.3.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml">
+      <HintPath>..\..\..\06. DLL\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\..\..\..\DotNetZipLib-DevKit-v1.9\zip-v1.9\Release\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NPOI, Version=2.0.5.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\06. DLL\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.0.5.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\06. DLL\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.0.5.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\06. DLL\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.0.5.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\06. DLL\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.8.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery.UI.Combined">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.UI.Combined.1.8.24\lib\net45\AspNet.ScriptManager.jQuery.UI.Combined.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax, Version=4.5.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.4.5.6\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms, Version=4.5.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.4.5.6\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Membership.OpenAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Membership.OpenAuth.1.0.2\lib\net45\Microsoft.AspNet.Membership.OpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.0.0\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.0\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="Zen.Barcode.Core">
+      <HintPath>..\..\..\..\Barcode.Render.Release.3.1.10729\Zen.Barcode.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acceso.aspx.cs">
+      <DependentUpon>Acceso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Acceso.aspx.designer.cs">
+      <DependentUpon>Acceso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ALCLOCAL\Consulta.cs" />
+    <Compile Include="ALCLOCAL\Transaccion.cs" />
+    <Compile Include="ALCLOCAL\UTIL.cs" />
+    <Compile Include="ALC_FW20\ALCLOCAL\Consulta.cs" />
+    <Compile Include="blanco.aspx.cs">
+      <DependentUpon>blanco.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="blanco.aspx.designer.cs">
+      <DependentUpon>blanco.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\AbonoParcial.aspx.cs">
+      <DependentUpon>AbonoParcial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\AbonoParcial.aspx.designer.cs">
+      <DependentUpon>AbonoParcial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\Abonos.aspx.cs">
+      <DependentUpon>Abonos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\Abonos.aspx.designer.cs">
+      <DependentUpon>Abonos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\buscaCobranzaAbonos.aspx.cs">
+      <DependentUpon>buscaCobranzaAbonos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\buscaCobranzaAbonos.aspx.designer.cs">
+      <DependentUpon>buscaCobranzaAbonos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\ComprobanteAbono.aspx.cs">
+      <DependentUpon>ComprobanteAbono.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\ComprobanteAbono.aspx.designer.cs">
+      <DependentUpon>ComprobanteAbono.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\ComprobanteParcial.aspx.cs">
+      <DependentUpon>ComprobanteParcial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\ComprobanteParcial.aspx.designer.cs">
+      <DependentUpon>ComprobanteParcial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\ComprobanteRendicion.aspx.cs">
+      <DependentUpon>ComprobanteRendicion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\ComprobanteRendicion.aspx.designer.cs">
+      <DependentUpon>ComprobanteRendicion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\DetalleCliente.aspx.cs">
+      <DependentUpon>DetalleCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\DetalleCliente.aspx.designer.cs">
+      <DependentUpon>DetalleCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\DetalleRendicion.aspx.cs">
+      <DependentUpon>DetalleRendicion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\DetalleRendicion.aspx.designer.cs">
+      <DependentUpon>DetalleRendicion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\LiberarCheques.aspx.cs">
+      <DependentUpon>LiberarCheques.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\LiberarCheques.aspx.designer.cs">
+      <DependentUpon>LiberarCheques.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\MuestraDesglose.aspx.cs">
+      <DependentUpon>MuestraDesglose.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\MuestraDesglose.aspx.designer.cs">
+      <DependentUpon>MuestraDesglose.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\MuestraRendicion.aspx.cs">
+      <DependentUpon>MuestraRendicion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\MuestraRendicion.aspx.designer.cs">
+      <DependentUpon>MuestraRendicion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\PagoAbono.aspx.cs">
+      <DependentUpon>PagoAbono.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\PagoAbono.aspx.designer.cs">
+      <DependentUpon>PagoAbono.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\PagoAbonoSub.aspx.cs">
+      <DependentUpon>PagoAbonoSub.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Abonos\PagoAbonoSub.aspx.designer.cs">
+      <DependentUpon>PagoAbonoSub.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Alzamientos\CargaMasivaRemesa.aspx.cs">
+      <DependentUpon>CargaMasivaRemesa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Alzamientos\CargaMasivaRemesa.aspx.designer.cs">
+      <DependentUpon>CargaMasivaRemesa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Alzamientos\ListadoAlzamientos.aspx.cs">
+      <DependentUpon>ListadoAlzamientos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Alzamientos\ListadoAlzamientos.aspx.designer.cs">
+      <DependentUpon>ListadoAlzamientos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Alzamientos\ListadoRemesas.aspx.cs">
+      <DependentUpon>ListadoRemesas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Alzamientos\ListadoRemesas.aspx.designer.cs">
+      <DependentUpon>ListadoRemesas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Alzamientos\MantenedorAlzamiento.aspx.cs">
+      <DependentUpon>MantenedorAlzamiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Alzamientos\MantenedorAlzamiento.aspx.designer.cs">
+      <DependentUpon>MantenedorAlzamiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\CalculoLiquidacion\BuscaCobranzaLiquidacion.aspx.cs">
+      <DependentUpon>BuscaCobranzaLiquidacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\CalculoLiquidacion\BuscaCobranzaLiquidacion.aspx.designer.cs">
+      <DependentUpon>BuscaCobranzaLiquidacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\CalculoLiquidacion\CalculoLiquidacion.aspx.cs">
+      <DependentUpon>CalculoLiquidacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\CalculoLiquidacion\CalculoLiquidacion.aspx.designer.cs">
+      <DependentUpon>CalculoLiquidacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\CargasMasivas\IngresoArchivo.aspx.cs">
+      <DependentUpon>IngresoArchivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\CargasMasivas\IngresoArchivo.aspx.designer.cs">
+      <DependentUpon>IngresoArchivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\AbonosExcel.aspx.cs">
+      <DependentUpon>AbonosExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\AbonosExcel.aspx.designer.cs">
+      <DependentUpon>AbonosExcel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\BienMueble.aspx.cs">
+      <DependentUpon>BienMueble.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\BienMueble.aspx.designer.cs">
+      <DependentUpon>BienMueble.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\BuscaCobranza.aspx.cs">
+      <DependentUpon>BuscaCobranza.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\BuscaCobranza.aspx.designer.cs">
+      <DependentUpon>BuscaCobranza.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\BuscaCobranzaConsulta.aspx.cs">
+      <DependentUpon>BuscaCobranzaConsulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\BuscaCobranzaConsulta.aspx.designer.cs">
+      <DependentUpon>BuscaCobranzaConsulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\BuscaConsultaJuicio.aspx.cs">
+      <DependentUpon>BuscaConsultaJuicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\BuscaConsultaJuicio.aspx.designer.cs">
+      <DependentUpon>BuscaConsultaJuicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\BuscaGeneral.aspx.cs">
+      <DependentUpon>BuscaGeneral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\BuscaGeneral.aspx.designer.cs">
+      <DependentUpon>BuscaGeneral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\BuscaGeneral2.aspx.cs">
+      <DependentUpon>BuscaGeneral2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\BuscaGeneral2.aspx.designer.cs">
+      <DependentUpon>BuscaGeneral2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\BuscaGeneral3.aspx.cs">
+      <DependentUpon>BuscaGeneral3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\BuscaGeneral3.aspx.designer.cs">
+      <DependentUpon>BuscaGeneral3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\BuscaPrejudicial.aspx.cs">
+      <DependentUpon>BuscaPrejudicial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\BuscaPrejudicial.aspx.designer.cs">
+      <DependentUpon>BuscaPrejudicial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ConsultaAbonos.aspx.cs">
+      <DependentUpon>ConsultaAbonos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ConsultaAbonos.aspx.designer.cs">
+      <DependentUpon>ConsultaAbonos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ConsultaCobranza.aspx.cs">
+      <DependentUpon>ConsultaCobranza.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ConsultaCobranza.aspx.designer.cs">
+      <DependentUpon>ConsultaCobranza.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ConsultaExhorto.aspx.cs">
+      <DependentUpon>ConsultaExhorto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ConsultaExhorto.aspx.designer.cs">
+      <DependentUpon>ConsultaExhorto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ConsultaJuicioEtapa.aspx.cs">
+      <DependentUpon>ConsultaJuicioEtapa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ConsultaJuicioEtapa.aspx.designer.cs">
+      <DependentUpon>ConsultaJuicioEtapa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ConsultaJuicioEtapaDOS.aspx.cs">
+      <DependentUpon>ConsultaJuicioEtapaDOS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ConsultaJuicioEtapaDOS.aspx.designer.cs">
+      <DependentUpon>ConsultaJuicioEtapaDOS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ConsultaPrejudicial.aspx.cs">
+      <DependentUpon>ConsultaPrejudicial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ConsultaPrejudicial.aspx.designer.cs">
+      <DependentUpon>ConsultaPrejudicial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ExcelBienMueble.aspx.cs">
+      <DependentUpon>ExcelBienMueble.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ExcelBienMueble.aspx.designer.cs">
+      <DependentUpon>ExcelBienMueble.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ExhortoExcel.aspx.cs">
+      <DependentUpon>ExhortoExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ExhortoExcel.aspx.designer.cs">
+      <DependentUpon>ExhortoExcel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\GrillaDomicilios.aspx.cs">
+      <DependentUpon>GrillaDomicilios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\GrillaDomicilios.aspx.designer.cs">
+      <DependentUpon>GrillaDomicilios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\GrillaExhorto.aspx.cs">
+      <DependentUpon>GrillaExhorto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\GrillaExhorto.aspx.designer.cs">
+      <DependentUpon>GrillaExhorto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\GrillaTelefonos.aspx.cs">
+      <DependentUpon>GrillaTelefonos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\GrillaTelefonos.aspx.designer.cs">
+      <DependentUpon>GrillaTelefonos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\IngresarRespExhorto.aspx.cs">
+      <DependentUpon>IngresarRespExhorto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\IngresarRespExhorto.aspx.designer.cs">
+      <DependentUpon>IngresarRespExhorto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\jui_EtapaExcel.aspx.cs">
+      <DependentUpon>jui_EtapaExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\jui_EtapaExcel.aspx.designer.cs">
+      <DependentUpon>jui_EtapaExcel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ListarPorRiesgo.aspx.cs">
+      <DependentUpon>ListarPorRiesgo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ListarPorRiesgo.aspx.designer.cs">
+      <DependentUpon>ListarPorRiesgo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\popBienes.aspx.cs">
+      <DependentUpon>popBienes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\popBienes.aspx.designer.cs">
+      <DependentUpon>popBienes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ReporteConsultaGeneralBieneMuebles.aspx.cs">
+      <DependentUpon>ReporteConsultaGeneralBieneMuebles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ReporteConsultaGeneralBieneMuebles.aspx.designer.cs">
+      <DependentUpon>ReporteConsultaGeneralBieneMuebles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ReporteConsultaGeneralBieneRaices.aspx.cs">
+      <DependentUpon>ReporteConsultaGeneralBieneRaices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ReporteConsultaGeneralBieneRaices.aspx.designer.cs">
+      <DependentUpon>ReporteConsultaGeneralBieneRaices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ReporteExcelJuicioEtapa.aspx.cs">
+      <DependentUpon>ReporteExcelJuicioEtapa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ReporteExcelJuicioEtapa.aspx.designer.cs">
+      <DependentUpon>ReporteExcelJuicioEtapa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ReporteJuicioGeneral.aspx.cs">
+      <DependentUpon>ReporteJuicioGeneral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ReporteJuicioGeneral.aspx.designer.cs">
+      <DependentUpon>ReporteJuicioGeneral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ReporteListarPorRiesgo.aspx.cs">
+      <DependentUpon>ReporteListarPorRiesgo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\ConsultaEspecial\ReporteListarPorRiesgo.aspx.designer.cs">
+      <DependentUpon>ReporteListarPorRiesgo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Consultas\calendario.aspx.cs">
+      <DependentUpon>calendario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Consultas\calendario.aspx.designer.cs">
+      <DependentUpon>calendario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Consultas\Prueba.aspx.cs">
+      <DependentUpon>Prueba.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Consultas\Prueba.aspx.designer.cs">
+      <DependentUpon>Prueba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\DatosCobranza.aspx.cs">
+      <DependentUpon>DatosCobranza.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\DatosCobranza.aspx.designer.cs">
+      <DependentUpon>DatosCobranza.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Descargar.aspx.cs">
+      <DependentUpon>Descargar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Descargar.aspx.designer.cs">
+      <DependentUpon>Descargar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\01_CitacionConfesarDeudaCheque.aspx.cs">
+      <DependentUpon>01_CitacionConfesarDeudaCheque.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\01_CitacionConfesarDeudaCheque.aspx.designer.cs">
+      <DependentUpon>01_CitacionConfesarDeudaCheque.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\02_CitacionConfesarDeudaFactura.aspx.cs">
+      <DependentUpon>02_CitacionConfesarDeudaFactura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\02_CitacionConfesarDeudaFactura.aspx.designer.cs">
+      <DependentUpon>02_CitacionConfesarDeudaFactura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\03_DemandaEjecutivaCheque.aspx.cs">
+      <DependentUpon>03_DemandaEjecutivaCheque.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\03_DemandaEjecutivaCheque.aspx.designer.cs">
+      <DependentUpon>03_DemandaEjecutivaCheque.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\04_DemandaEjecutivaLetraDeCambio.aspx.cs">
+      <DependentUpon>04_DemandaEjecutivaLetraDeCambio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\04_DemandaEjecutivaLetraDeCambio.aspx.designer.cs">
+      <DependentUpon>04_DemandaEjecutivaLetraDeCambio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\05_DemandaEjecutivaPagareBbvaAvalYExhorto.aspx.cs">
+      <DependentUpon>05_DemandaEjecutivaPagareBbvaAvalYExhorto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\05_DemandaEjecutivaPagareBbvaAvalYExhorto.aspx.designer.cs">
+      <DependentUpon>05_DemandaEjecutivaPagareBbvaAvalYExhorto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\06_DemandaEjecutivaPagareCreditoUniversitario.aspx.cs">
+      <DependentUpon>06_DemandaEjecutivaPagareCreditoUniversitario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\06_DemandaEjecutivaPagareCreditoUniversitario.aspx.designer.cs">
+      <DependentUpon>06_DemandaEjecutivaPagareCreditoUniversitario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\07_GestionVoluntariaExtravioDeTitulos.aspx.cs">
+      <DependentUpon>07_GestionVoluntariaExtravioDeTitulos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\07_GestionVoluntariaExtravioDeTitulos.aspx.designer.cs">
+      <DependentUpon>07_GestionVoluntariaExtravioDeTitulos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\08_OrdinariaMenorCuantiaCobroPesos.aspx.cs">
+      <DependentUpon>08_OrdinariaMenorCuantiaCobroPesos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\08_OrdinariaMenorCuantiaCobroPesos.aspx.designer.cs">
+      <DependentUpon>08_OrdinariaMenorCuantiaCobroPesos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\09_PreparacionNotificacionProtestoDeCheque.aspx.cs">
+      <DependentUpon>09_PreparacionNotificacionProtestoDeCheque.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\09_PreparacionNotificacionProtestoDeCheque.aspx.designer.cs">
+      <DependentUpon>09_PreparacionNotificacionProtestoDeCheque.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\DdaBbvaCorrigida2014PagareConExhorto.aspx.cs">
+      <DependentUpon>DdaBbvaCorrigida2014PagareConExhorto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\DdaBbvaCorrigida2014PagareConExhorto.aspx.designer.cs">
+      <DependentUpon>DdaBbvaCorrigida2014PagareConExhorto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\DdaBbvaCorrigida2014PagareSinExhorto.aspx.cs">
+      <DependentUpon>DdaBbvaCorrigida2014PagareSinExhorto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\DdaBbvaCorrigida2014PagareSinExhorto.aspx.designer.cs">
+      <DependentUpon>DdaBbvaCorrigida2014PagareSinExhorto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\DdaPagareBbvaConAvalConExhUf.aspx.cs">
+      <DependentUpon>DdaPagareBbvaConAvalConExhUf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\DdaPagareBbvaConAvalConExhUf.aspx.designer.cs">
+      <DependentUpon>DdaPagareBbvaConAvalConExhUf.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\DdaUfConExhorto.aspx.cs">
+      <DependentUpon>DdaUfConExhorto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\DdaUfConExhorto.aspx.designer.cs">
+      <DependentUpon>DdaUfConExhorto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\DdaUfSinExhorto.aspx.cs">
+      <DependentUpon>DdaUfSinExhorto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\DdaUfSinExhorto.aspx.designer.cs">
+      <DependentUpon>DdaUfSinExhorto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\DdaVisaBbvaSinExhFlores.aspx.cs">
+      <DependentUpon>DdaVisaBbvaSinExhFlores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Formatos\DdaVisaBbvaSinExhFlores.aspx.designer.cs">
+      <DependentUpon>DdaVisaBbvaSinExhFlores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Listado.aspx.cs">
+      <DependentUpon>Listado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Demandas\Listado.aspx.designer.cs">
+      <DependentUpon>Listado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Digitalizar\DigiConsulta.aspx.cs">
+      <DependentUpon>DigiConsulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Digitalizar\DigiConsulta.aspx.designer.cs">
+      <DependentUpon>DigiConsulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Digitalizar\Digitalizar.aspx.cs">
+      <DependentUpon>Digitalizar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Digitalizar\Digitalizar.aspx.designer.cs">
+      <DependentUpon>Digitalizar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Descargar.aspx.cs">
+      <DependentUpon>Descargar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Descargar.aspx.designer.cs">
+      <DependentUpon>Descargar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\DescargarArchivo.aspx.cs">
+      <DependentUpon>DescargarArchivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\DescargarArchivo.aspx.designer.cs">
+      <DependentUpon>DescargarArchivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\Bienes\InformeBienMuebles.aspx.cs">
+      <DependentUpon>InformeBienMuebles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\Bienes\InformeBienMuebles.aspx.designer.cs">
+      <DependentUpon>InformeBienMuebles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\Bienes\InformeBienMuebles_Negativa.aspx.cs">
+      <DependentUpon>InformeBienMuebles_Negativa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\Bienes\InformeBienMuebles_Negativa.aspx.designer.cs">
+      <DependentUpon>InformeBienMuebles_Negativa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\Bienes\InformeBienRaiz.aspx.cs">
+      <DependentUpon>InformeBienRaiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\Bienes\InformeBienRaiz.aspx.designer.cs">
+      <DependentUpon>InformeBienRaiz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\Bienes\InformeBienRaiz_Negativa.aspx.cs">
+      <DependentUpon>InformeBienRaiz_Negativa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\Bienes\InformeBienRaiz_Negativa.aspx.designer.cs">
+      <DependentUpon>InformeBienRaiz_Negativa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\CertifiqueDecreteRemate.aspx.cs">
+      <DependentUpon>CertifiqueDecreteRemate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\CertifiqueDecreteRemate.aspx.designer.cs">
+      <DependentUpon>CertifiqueDecreteRemate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DecretoRemate.aspx.cs">
+      <DependentUpon>DecretoRemate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DecretoRemate.aspx.designer.cs">
+      <DependentUpon>DecretoRemate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCinco\AcompanaDocumentos.aspx.cs">
+      <DependentUpon>AcompanaDocumentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCinco\AcompanaDocumentos.aspx.designer.cs">
+      <DependentUpon>AcompanaDocumentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCinco\AcompanaDocumentosConCitacion.aspx.cs">
+      <DependentUpon>AcompanaDocumentosConCitacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCinco\AcompanaDocumentosConCitacion.aspx.designer.cs">
+      <DependentUpon>AcompanaDocumentosConCitacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCinco\DevuelveExhortoEmbargoPositivoNuevoExhortoRetiro.aspx.cs">
+      <DependentUpon>DevuelveExhortoEmbargoPositivoNuevoExhortoRetiro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCinco\DevuelveExhortoEmbargoPositivoNuevoExhortoRetiro.aspx.designer.cs">
+      <DependentUpon>DevuelveExhortoEmbargoPositivoNuevoExhortoRetiro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCinco\DevuelveExhortoYSeDictaSentenciaVoluntaria.aspx.cs">
+      <DependentUpon>DevuelveExhortoYSeDictaSentenciaVoluntaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCinco\DevuelveExhortoYSeDictaSentenciaVoluntaria.aspx.designer.cs">
+      <DependentUpon>DevuelveExhortoYSeDictaSentenciaVoluntaria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCinco\ExtractoVoluntaria.aspx.cs">
+      <DependentUpon>ExtractoVoluntaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCinco\ExtractoVoluntaria.aspx.designer.cs">
+      <DependentUpon>ExtractoVoluntaria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCinco\SeCertifiqueEjecutoriaYCopiasAutorizadasVoluntarias.aspx.cs">
+      <DependentUpon>SeCertifiqueEjecutoriaYCopiasAutorizadasVoluntarias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCinco\SeCertifiqueEjecutoriaYCopiasAutorizadasVoluntarias.aspx.designer.cs">
+      <DependentUpon>SeCertifiqueEjecutoriaYCopiasAutorizadasVoluntarias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCinco\SeDaPorNotificadoVoluntarias.aspx.cs">
+      <DependentUpon>SeDaPorNotificadoVoluntarias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCinco\SeDaPorNotificadoVoluntarias.aspx.designer.cs">
+      <DependentUpon>SeDaPorNotificadoVoluntarias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCinco\SeDicteSentenciaDeExtravioVoluntaria.aspx.cs">
+      <DependentUpon>SeDicteSentenciaDeExtravioVoluntaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCinco\SeDicteSentenciaDeExtravioVoluntaria.aspx.designer.cs">
+      <DependentUpon>SeDicteSentenciaDeExtravioVoluntaria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCinco\SolicitaCopiasAutorizadasVoluntarias.aspx.cs">
+      <DependentUpon>SolicitaCopiasAutorizadasVoluntarias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCinco\SolicitaCopiasAutorizadasVoluntarias.aspx.designer.cs">
+      <DependentUpon>SolicitaCopiasAutorizadasVoluntarias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\AutorizacionDevolucionDeDocumentos.aspx.cs">
+      <DependentUpon>AutorizacionDevolucionDeDocumentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\AutorizacionDevolucionDeDocumentos.aspx.designer.cs">
+      <DependentUpon>AutorizacionDevolucionDeDocumentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\AutorizacionRetiroExhorto.aspx.cs">
+      <DependentUpon>AutorizacionRetiroExhorto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\AutorizacionRetiroExhorto.aspx.designer.cs">
+      <DependentUpon>AutorizacionRetiroExhorto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\AvisoSuspencionDeJuicio.aspx.cs">
+      <DependentUpon>AvisoSuspencionDeJuicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\AvisoSuspencionDeJuicio.aspx.designer.cs">
+      <DependentUpon>AvisoSuspencionDeJuicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\AvisoTerminoDeJuicio.aspx.cs">
+      <DependentUpon>AvisoTerminoDeJuicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\AvisoTerminoDeJuicio.aspx.designer.cs">
+      <DependentUpon>AvisoTerminoDeJuicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\CertificadoNroExcArt472.aspx.cs">
+      <DependentUpon>CertificadoNroExcArt472.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\CertificadoNroExcArt472.aspx.designer.cs">
+      <DependentUpon>CertificadoNroExcArt472.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\CumpleLoOrdenadoCalculo.aspx.cs">
+      <DependentUpon>CumpleLoOrdenadoCalculo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\CumpleLoOrdenadoCalculo.aspx.designer.cs">
+      <DependentUpon>CumpleLoOrdenadoCalculo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\DelegaPode.aspx.cs">
+      <DependentUpon>DelegaPode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\DelegaPode.aspx.designer.cs">
+      <DependentUpon>DelegaPode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\NotificacionPorArt52.aspx.cs">
+      <DependentUpon>NotificacionPorArt52.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\NotificacionPorArt52.aspx.designer.cs">
+      <DependentUpon>NotificacionPorArt52.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\SeDaPorNotificadoDemandaCuge.aspx.cs">
+      <DependentUpon>SeDaPorNotificadoDemandaCuge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\SeDaPorNotificadoDemandaCuge.aspx.designer.cs">
+      <DependentUpon>SeDaPorNotificadoDemandaCuge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\SenalaBienEmbargoDevolucionDeImpuesto.aspx.cs">
+      <DependentUpon>SenalaBienEmbargoDevolucionDeImpuesto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\SenalaBienEmbargoDevolucionDeImpuesto.aspx.designer.cs">
+      <DependentUpon>SenalaBienEmbargoDevolucionDeImpuesto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\SenalaBienEmbargoVehiculo.aspx.cs">
+      <DependentUpon>SenalaBienEmbargoVehiculo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\SenalaBienEmbargoVehiculo.aspx.designer.cs">
+      <DependentUpon>SenalaBienEmbargoVehiculo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\SeTengaPorPreparadaViaEjecutada.aspx.cs">
+      <DependentUpon>SeTengaPorPreparadaViaEjecutada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\SeTengaPorPreparadaViaEjecutada.aspx.designer.cs">
+      <DependentUpon>SeTengaPorPreparadaViaEjecutada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\SolicitudQueIndica.aspx.cs">
+      <DependentUpon>SolicitudQueIndica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosCuatro\SolicitudQueIndica.aspx.designer.cs">
+      <DependentUpon>SolicitudQueIndica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\AcompanaLiquidacionHipotecariaTasacionCostas.aspx.cs">
+      <DependentUpon>AcompanaLiquidacionHipotecariaTasacionCostas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\AcompanaLiquidacionHipotecariaTasacionCostas.aspx.designer.cs">
+      <DependentUpon>AcompanaLiquidacionHipotecariaTasacionCostas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\BasesRemateTipoJuicioEjecutivo.aspx.cs">
+      <DependentUpon>BasesRemateTipoJuicioEjecutivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\BasesRemateTipoJuicioEjecutivo.aspx.designer.cs">
+      <DependentUpon>BasesRemateTipoJuicioEjecutivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\BasesRemateTipoJuicioHipotecario.aspx.cs">
+      <DependentUpon>BasesRemateTipoJuicioHipotecario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\BasesRemateTipoJuicioHipotecario.aspx.designer.cs">
+      <DependentUpon>BasesRemateTipoJuicioHipotecario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\CumpleLoOrdenadoTipo.aspx.cs">
+      <DependentUpon>CumpleLoOrdenadoTipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\CumpleLoOrdenadoTipo.aspx.designer.cs">
+      <DependentUpon>CumpleLoOrdenadoTipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\DesignacionMartilleroYRetiro.aspx.cs">
+      <DependentUpon>DesignacionMartilleroYRetiro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\DesignacionMartilleroYRetiro.aspx.designer.cs">
+      <DependentUpon>DesignacionMartilleroYRetiro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\DEV_EXH_PositivoSeCertifiqueHipotecario.aspx.cs">
+      <DependentUpon>DEV_EXH_PositivoSeCertifiqueHipotecario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\DEV_EXH_PositivoSeCertifiqueHipotecario.aspx.designer.cs">
+      <DependentUpon>DEV_EXH_PositivoSeCertifiqueHipotecario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\DEV_EXH_PositivoSeCertifiqueYDecretoRemateHipotecario.aspx.cs">
+      <DependentUpon>DEV_EXH_PositivoSeCertifiqueYDecretoRemateHipotecario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\DEV_EXH_PositivoSeCertifiqueYDecretoRemateHipotecario.aspx.designer.cs">
+      <DependentUpon>DEV_EXH_PositivoSeCertifiqueYDecretoRemateHipotecario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\DiaHoraSubasta.aspx.cs">
+      <DependentUpon>DiaHoraSubasta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\DiaHoraSubasta.aspx.designer.cs">
+      <DependentUpon>DiaHoraSubasta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\RetiroVehiculoTipo.aspx.cs">
+      <DependentUpon>RetiroVehiculoTipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\RetiroVehiculoTipo.aspx.designer.cs">
+      <DependentUpon>RetiroVehiculoTipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SeCertificaPagareNoExcepcionesTipo.aspx.cs">
+      <DependentUpon>SeCertificaPagareNoExcepcionesTipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SeCertificaPagareNoExcepcionesTipo.aspx.designer.cs">
+      <DependentUpon>SeCertificaPagareNoExcepcionesTipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SeGireCheque.aspx.cs">
+      <DependentUpon>SeGireCheque.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SeGireCheque.aspx.designer.cs">
+      <DependentUpon>SeGireCheque.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SenalaBienEmbargoPropiedadExhortoTipo.aspx.cs">
+      <DependentUpon>SenalaBienEmbargoPropiedadExhortoTipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SenalaBienEmbargoPropiedadExhortoTipo.aspx.designer.cs">
+      <DependentUpon>SenalaBienEmbargoPropiedadExhortoTipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SenalaBienEmbargoPropiedadTipo.aspx.cs">
+      <DependentUpon>SenalaBienEmbargoPropiedadTipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SenalaBienEmbargoPropiedadTipo.aspx.designer.cs">
+      <DependentUpon>SenalaBienEmbargoPropiedadTipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SenalaNuevoDomicilioExhorto.aspx.cs">
+      <DependentUpon>SenalaNuevoDomicilioExhorto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SenalaNuevoDomicilioExhorto.aspx.designer.cs">
+      <DependentUpon>SenalaNuevoDomicilioExhorto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SenalaNuevoDomicilioTipo.aspx.cs">
+      <DependentUpon>SenalaNuevoDomicilioTipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SenalaNuevoDomicilioTipo.aspx.designer.cs">
+      <DependentUpon>SenalaNuevoDomicilioTipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SeResuelvaBases.aspx.cs">
+      <DependentUpon>SeResuelvaBases.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SeResuelvaBases.aspx.designer.cs">
+      <DependentUpon>SeResuelvaBases.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SeTengaComoMinimoParaSubastaAvaluo.aspx.cs">
+      <DependentUpon>SeTengaComoMinimoParaSubastaAvaluo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SeTengaComoMinimoParaSubastaAvaluo.aspx.designer.cs">
+      <DependentUpon>SeTengaComoMinimoParaSubastaAvaluo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SolicitaDesarchivo.aspx.cs">
+      <DependentUpon>SolicitaDesarchivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SolicitaDesarchivo.aspx.designer.cs">
+      <DependentUpon>SolicitaDesarchivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SolicitaExhortoCedulaRemateTipo.aspx.cs">
+      <DependentUpon>SolicitaExhortoCedulaRemateTipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SolicitaExhortoCedulaRemateTipo.aspx.designer.cs">
+      <DependentUpon>SolicitaExhortoCedulaRemateTipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SolicitaExhortoConFacultadesFuerzaPublicaTipo.aspx.cs">
+      <DependentUpon>SolicitaExhortoConFacultadesFuerzaPublicaTipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SolicitaExhortoConFacultadesFuerzaPublicaTipo.aspx.designer.cs">
+      <DependentUpon>SolicitaExhortoConFacultadesFuerzaPublicaTipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SolicitaExhortoNotifART52Tipo.aspx.cs">
+      <DependentUpon>SolicitaExhortoNotifART52Tipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SolicitaExhortoNotifART52Tipo.aspx.designer.cs">
+      <DependentUpon>SolicitaExhortoNotifART52Tipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SolicitaExhortoNotificacionTipo.aspx.cs">
+      <DependentUpon>SolicitaExhortoNotificacionTipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SolicitaExhortoNotificacionTipo.aspx.designer.cs">
+      <DependentUpon>SolicitaExhortoNotificacionTipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SolicitaOficiosQueIndicaTipo.aspx.cs">
+      <DependentUpon>SolicitaOficiosQueIndicaTipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosDos\SolicitaOficiosQueIndicaTipo.aspx.designer.cs">
+      <DependentUpon>SolicitaOficiosQueIndicaTipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosSeis\AcompanaDocumentosTanner.aspx.cs">
+      <DependentUpon>AcompanaDocumentosTanner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosSeis\AcompanaDocumentosTanner.aspx.designer.cs">
+      <DependentUpon>AcompanaDocumentosTanner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosSeis\AmpliacionEmbargoInmueble.aspx.cs">
+      <DependentUpon>AmpliacionEmbargoInmueble.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosSeis\AmpliacionEmbargoInmueble.aspx.designer.cs">
+      <DependentUpon>AmpliacionEmbargoInmueble.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosSeis\AmpliacionEmbargoInmuebleExhorto.aspx.cs">
+      <DependentUpon>AmpliacionEmbargoInmuebleExhorto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosSeis\AmpliacionEmbargoInmuebleExhorto.aspx.designer.cs">
+      <DependentUpon>AmpliacionEmbargoInmuebleExhorto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosSeis\CartaPlanNormalizacionBBVA.aspx.cs">
+      <DependentUpon>CartaPlanNormalizacionBBVA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosSeis\CartaPlanNormalizacionBBVA.aspx.designer.cs">
+      <DependentUpon>CartaPlanNormalizacionBBVA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosSeis\TransaccionPutBbva.aspx.cs">
+      <DependentUpon>TransaccionPutBbva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosSeis\TransaccionPutBbva.aspx.designer.cs">
+      <DependentUpon>TransaccionPutBbva.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosSiete\AcompañaDocumentosTannerFactorline.aspx.cs">
+      <DependentUpon>AcompañaDocumentosTannerFactorline.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosSiete\AcompañaDocumentosTannerFactorline.aspx.designer.cs">
+      <DependentUpon>AcompañaDocumentosTannerFactorline.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosSiete\SenalaBienPropiedadDerecho.aspx.cs">
+      <DependentUpon>SenalaBienPropiedadDerecho.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosSiete\SenalaBienPropiedadDerecho.aspx.designer.cs">
+      <DependentUpon>SenalaBienPropiedadDerecho.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\AcompanaOficioYNuevoDomicilio.aspx.cs">
+      <DependentUpon>AcompanaOficioYNuevoDomicilio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\AcompanaOficioYNuevoDomicilio.aspx.designer.cs">
+      <DependentUpon>AcompanaOficioYNuevoDomicilio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\ActualizaMinimoAvaluoFiscal.aspx.cs">
+      <DependentUpon>ActualizaMinimoAvaluoFiscal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\ActualizaMinimoAvaluoFiscal.aspx.designer.cs">
+      <DependentUpon>ActualizaMinimoAvaluoFiscal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\CertificaExtravioCuaderno.aspx.cs">
+      <DependentUpon>CertificaExtravioCuaderno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\CertificaExtravioCuaderno.aspx.designer.cs">
+      <DependentUpon>CertificaExtravioCuaderno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\DaCuentaDePagoDevolucionTituloDeudor.aspx.cs">
+      <DependentUpon>DaCuentaDePagoDevolucionTituloDeudor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\DaCuentaDePagoDevolucionTituloDeudor.aspx.designer.cs">
+      <DependentUpon>DaCuentaDePagoDevolucionTituloDeudor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\DaCuentaDePagoYRetiro.aspx.cs">
+      <DependentUpon>DaCuentaDePagoYRetiro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\DaCuentaDePagoYRetiro.aspx.designer.cs">
+      <DependentUpon>DaCuentaDePagoYRetiro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\DaCuentaNormalizacion.aspx.cs">
+      <DependentUpon>DaCuentaNormalizacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\DaCuentaNormalizacion.aspx.designer.cs">
+      <DependentUpon>DaCuentaNormalizacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\DevuelveExhortoNegativoNuevoDocNuevoEx.aspx.cs">
+      <DependentUpon>DevuelveExhortoNegativoNuevoDocNuevoEx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\DevuelveExhortoNegativoNuevoDocNuevoEx.aspx.designer.cs">
+      <DependentUpon>DevuelveExhortoNegativoNuevoDocNuevoEx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\DevuelveExhortosYExEmbargo.aspx.cs">
+      <DependentUpon>DevuelveExhortosYExEmbargo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\DevuelveExhortosYExEmbargo.aspx.designer.cs">
+      <DependentUpon>DevuelveExhortosYExEmbargo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\EncargoBusquedaDeBienes.aspx.cs">
+      <DependentUpon>EncargoBusquedaDeBienes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\EncargoBusquedaDeBienes.aspx.designer.cs">
+      <DependentUpon>EncargoBusquedaDeBienes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\EncargoBusquedaDeDomicilio.aspx.cs">
+      <DependentUpon>EncargoBusquedaDeDomicilio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\EncargoBusquedaDeDomicilio.aspx.designer.cs">
+      <DependentUpon>EncargoBusquedaDeDomicilio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\EncargoReceptor.aspx.cs">
+      <DependentUpon>EncargoReceptor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\EncargoReceptor.aspx.designer.cs">
+      <DependentUpon>EncargoReceptor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\EncargoTrabajoProcurador.aspx.cs">
+      <DependentUpon>EncargoTrabajoProcurador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\EncargoTrabajoProcurador.aspx.designer.cs">
+      <DependentUpon>EncargoTrabajoProcurador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\FuerzaPublicaEmbargo.aspx.cs">
+      <DependentUpon>FuerzaPublicaEmbargo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\FuerzaPublicaEmbargo.aspx.designer.cs">
+      <DependentUpon>FuerzaPublicaEmbargo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\FuerzaPublicaRetiro.aspx.cs">
+      <DependentUpon>FuerzaPublicaRetiro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\FuerzaPublicaRetiro.aspx.designer.cs">
+      <DependentUpon>FuerzaPublicaRetiro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\RetiroDeDemanda.aspx.cs">
+      <DependentUpon>RetiroDeDemanda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\RetiroDeDemanda.aspx.designer.cs">
+      <DependentUpon>RetiroDeDemanda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\RetiroDeDemandaYDevolucionDocumento.aspx.cs">
+      <DependentUpon>RetiroDeDemandaYDevolucionDocumento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\DocumentosTres\RetiroDeDemandaYDevolucionDocumento.aspx.designer.cs">
+      <DependentUpon>RetiroDeDemandaYDevolucionDocumento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\Domicilios\InformeDomicilios.aspx.cs">
+      <DependentUpon>InformeDomicilios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\Domicilios\InformeDomicilios.aspx.designer.cs">
+      <DependentUpon>InformeDomicilios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\Gastos\ComprobanteIngreso.aspx.cs">
+      <DependentUpon>ComprobanteIngreso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\Gastos\ComprobanteIngreso.aspx.designer.cs">
+      <DependentUpon>ComprobanteIngreso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\JuiciosPagare\DaCuentaPagoDevolucionDocumento.aspx.cs">
+      <DependentUpon>DaCuentaPagoDevolucionDocumento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\JuiciosPagare\DaCuentaPagoDevolucionDocumento.aspx.designer.cs">
+      <DependentUpon>DaCuentaPagoDevolucionDocumento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\JuiciosPagare\ProposicionBasesRemate.aspx.cs">
+      <DependentUpon>ProposicionBasesRemate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\JuiciosPagare\ProposicionBasesRemate.aspx.designer.cs">
+      <DependentUpon>ProposicionBasesRemate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\JuiciosPagare\ProposicionMartillero.aspx.cs">
+      <DependentUpon>ProposicionMartillero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\JuiciosPagare\ProposicionMartillero.aspx.designer.cs">
+      <DependentUpon>ProposicionMartillero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\NotificacionConformidadArticulo44.aspx.cs">
+      <DependentUpon>NotificacionConformidadArticulo44.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\NotificacionConformidadArticulo44.aspx.designer.cs">
+      <DependentUpon>NotificacionConformidadArticulo44.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\PruebaDocumentos\AcompañaDocumentoTannerAutofin.aspx.cs">
+      <DependentUpon>AcompañaDocumentoTannerAutofin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\PruebaDocumentos\AcompañaDocumentoTannerAutofin.aspx.designer.cs">
+      <DependentUpon>AcompañaDocumentoTannerAutofin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\PruebaDocumentos\CertificadoEjecutoriaAvenimiento.aspx.cs">
+      <DependentUpon>CertificadoEjecutoriaAvenimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\PruebaDocumentos\CertificadoEjecutoriaAvenimiento.aspx.designer.cs">
+      <DependentUpon>CertificadoEjecutoriaAvenimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\PruebaDocumentos\CursoProgresivo.aspx.cs">
+      <DependentUpon>CursoProgresivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\PruebaDocumentos\CursoProgresivo.aspx.designer.cs">
+      <DependentUpon>CursoProgresivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\PruebaDocumentos\DevuelveExhortoDiligenciaYSolicitaExhortoRetiroAuto.aspx.cs">
+      <DependentUpon>DevuelveExhortoDiligenciaYSolicitaExhortoRetiroAuto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\PruebaDocumentos\DevuelveExhortoDiligenciaYSolicitaExhortoRetiroAuto.aspx.designer.cs">
+      <DependentUpon>DevuelveExhortoDiligenciaYSolicitaExhortoRetiroAuto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\PruebaDocumentos\EscritoPilotoRetiroDeTitulosBECO.aspx.cs">
+      <DependentUpon>EscritoPilotoRetiroDeTitulosBECO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\PruebaDocumentos\EscritoPilotoRetiroDeTitulosBECO.aspx.designer.cs">
+      <DependentUpon>EscritoPilotoRetiroDeTitulosBECO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\PruebaDocumentos\RatificaFirma.aspx.cs">
+      <DependentUpon>RatificaFirma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\PruebaDocumentos\RatificaFirma.aspx.designer.cs">
+      <DependentUpon>RatificaFirma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\PruebaDocumentos\ReceptorAdHoc.aspx.cs">
+      <DependentUpon>ReceptorAdHoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\PruebaDocumentos\ReceptorAdHoc.aspx.designer.cs">
+      <DependentUpon>ReceptorAdHoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\PruebaDocumentos\SolicitudAlzamientoInmuebleCorvalanPulgar.aspx.cs">
+      <DependentUpon>SolicitudAlzamientoInmuebleCorvalanPulgar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Formatos\PruebaDocumentos\SolicitudAlzamientoInmuebleCorvalanPulgar.aspx.designer.cs">
+      <DependentUpon>SolicitudAlzamientoInmuebleCorvalanPulgar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\General\GeneradorCodigoBarra.aspx.cs">
+      <DependentUpon>GeneradorCodigoBarra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\General\GeneradorCodigoBarra.aspx.designer.cs">
+      <DependentUpon>GeneradorCodigoBarra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Listado.aspx.cs">
+      <DependentUpon>Listado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Documentos\Listado.aspx.designer.cs">
+      <DependentUpon>Listado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Escritos\EscritoPrejudicial.aspx.cs">
+      <DependentUpon>EscritoPrejudicial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Escritos\EscritoPrejudicial.aspx.designer.cs">
+      <DependentUpon>EscritoPrejudicial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Escritos\ImprimeEscritoPrejudicial.aspx.cs">
+      <DependentUpon>ImprimeEscritoPrejudicial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Escritos\ImprimeEscritoPrejudicial.aspx.designer.cs">
+      <DependentUpon>ImprimeEscritoPrejudicial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Gastos\BuscaCobranzaGastos.aspx.cs">
+      <DependentUpon>BuscaCobranzaGastos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Gastos\BuscaCobranzaGastos.aspx.designer.cs">
+      <DependentUpon>BuscaCobranzaGastos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Gastos\ExcelGastos.aspx.cs">
+      <DependentUpon>ExcelGastos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Gastos\ExcelGastos.aspx.designer.cs">
+      <DependentUpon>ExcelGastos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Gastos\Gastos.aspx.cs">
+      <DependentUpon>Gastos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Gastos\Gastos.aspx.designer.cs">
+      <DependentUpon>Gastos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Gastos\Listar.aspx.cs">
+      <DependentUpon>Listar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Gastos\Listar.aspx.designer.cs">
+      <DependentUpon>Listar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Gastos\MostrarDetalleGastos.aspx.cs">
+      <DependentUpon>MostrarDetalleGastos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Gastos\MostrarDetalleGastos.aspx.designer.cs">
+      <DependentUpon>MostrarDetalleGastos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Gestion\ControlJuiciosPorPlazos.aspx.cs">
+      <DependentUpon>ControlJuiciosPorPlazos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Gestion\ControlJuiciosPorPlazos.aspx.designer.cs">
+      <DependentUpon>ControlJuiciosPorPlazos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Gestion\Metricas\Avances\AvancePorEtapa.aspx.cs">
+      <DependentUpon>AvancePorEtapa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Gestion\Metricas\Avances\AvancePorEtapa.aspx.designer.cs">
+      <DependentUpon>AvancePorEtapa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Gestion\Metricas\Avances\AvancePorTramite.aspx.cs">
+      <DependentUpon>AvancePorTramite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Gestion\Metricas\Avances\AvancePorTramite.aspx.designer.cs">
+      <DependentUpon>AvancePorTramite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Gestion\Metricas\Avances\Cumplimiento.aspx.cs">
+      <DependentUpon>Cumplimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Gestion\Metricas\Avances\Cumplimiento.aspx.designer.cs">
+      <DependentUpon>Cumplimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Gestion\Metricas\EstadosActuales\Clientes\ListadoClientes.aspx.cs">
+      <DependentUpon>ListadoClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Gestion\Metricas\EstadosActuales\Clientes\ListadoClientes.aspx.designer.cs">
+      <DependentUpon>ListadoClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Gestion\Metricas\EstadosActuales\Clientes\ListadoCobranzasClientes.aspx.cs">
+      <DependentUpon>ListadoCobranzasClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Gestion\Metricas\EstadosActuales\Clientes\ListadoCobranzasClientes.aspx.designer.cs">
+      <DependentUpon>ListadoCobranzasClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Gestion\Metricas\EstadosActuales\Procuradores\ListadoCobranzasProcuradores.aspx.cs">
+      <DependentUpon>ListadoCobranzasProcuradores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Gestion\Metricas\EstadosActuales\Procuradores\ListadoCobranzasProcuradores.aspx.designer.cs">
+      <DependentUpon>ListadoCobranzasProcuradores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Gestion\Metricas\EstadosActuales\Procuradores\ListadoProcuradores.aspx.cs">
+      <DependentUpon>ListadoProcuradores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Gestion\Metricas\EstadosActuales\Procuradores\ListadoProcuradores.aspx.designer.cs">
+      <DependentUpon>ListadoProcuradores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Gestion\Metricas\EstadosActuales\Procuradores\Resumen.aspx.cs">
+      <DependentUpon>Resumen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Gestion\Metricas\EstadosActuales\Procuradores\Resumen.aspx.designer.cs">
+      <DependentUpon>Resumen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Gestion\Metricas\EstadosActuales\Procuradores\ResumenCobranzasTermino.aspx.cs">
+      <DependentUpon>ResumenCobranzasTermino.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Gestion\Metricas\EstadosActuales\Procuradores\ResumenCobranzasTermino.aspx.designer.cs">
+      <DependentUpon>ResumenCobranzasTermino.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Gestion\Metricas\Listado.aspx.cs">
+      <DependentUpon>Listado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Gestion\Metricas\Listado.aspx.designer.cs">
+      <DependentUpon>Listado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Gestion\Metricas\Mantenedor.aspx.cs">
+      <DependentUpon>Mantenedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Gestion\Metricas\Mantenedor.aspx.designer.cs">
+      <DependentUpon>Mantenedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\listados\LisBienRaiz.aspx.cs">
+      <DependentUpon>LisBienRaiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\listados\LisBienRaiz.aspx.designer.cs">
+      <DependentUpon>LisBienRaiz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\listados\LisClientes.aspx.cs">
+      <DependentUpon>LisClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\listados\LisClientes.aspx.designer.cs">
+      <DependentUpon>LisClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\listados\LisCobranza.aspx.cs">
+      <DependentUpon>LisCobranza.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\listados\LisCobranza.aspx.designer.cs">
+      <DependentUpon>LisCobranza.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\listados\LisDeudores.aspx.cs">
+      <DependentUpon>LisDeudores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\listados\LisDeudores.aspx.designer.cs">
+      <DependentUpon>LisDeudores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\listados\LisDomicilios.aspx.cs">
+      <DependentUpon>LisDomicilios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\listados\LisDomicilios.aspx.designer.cs">
+      <DependentUpon>LisDomicilios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\listados\LisExhortos.aspx.cs">
+      <DependentUpon>LisExhortos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\listados\LisExhortos.aspx.designer.cs">
+      <DependentUpon>LisExhortos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\listados\LisJuicio.aspx.cs">
+      <DependentUpon>LisJuicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\listados\LisJuicio.aspx.designer.cs">
+      <DependentUpon>LisJuicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\listados\LisMutuo.aspx.cs">
+      <DependentUpon>LisMutuo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\listados\LisMutuo.aspx.designer.cs">
+      <DependentUpon>LisMutuo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\listados\LisTelefono.aspx.cs">
+      <DependentUpon>LisTelefono.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\listados\LisTelefono.aspx.designer.cs">
+      <DependentUpon>LisTelefono.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\listados\LisUsuarios.aspx.cs">
+      <DependentUpon>LisUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\listados\LisUsuarios.aspx.designer.cs">
+      <DependentUpon>LisUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\listados\Master.aspx.cs">
+      <DependentUpon>Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\listados\Master.aspx.designer.cs">
+      <DependentUpon>Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\CambiaRol.aspx.cs">
+      <DependentUpon>CambiaRol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\CambiaRol.aspx.designer.cs">
+      <DependentUpon>CambiaRol.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\FindExhorto.aspx.cs">
+      <DependentUpon>FindExhorto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\FindExhorto.aspx.designer.cs">
+      <DependentUpon>FindExhorto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MarcaModelos\Agregar.aspx.cs">
+      <DependentUpon>Agregar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MarcaModelos\Agregar.aspx.designer.cs">
+      <DependentUpon>Agregar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MarcaModelos\Marca.aspx.cs">
+      <DependentUpon>Marca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MarcaModelos\Marca.aspx.designer.cs">
+      <DependentUpon>Marca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntBienMueble.aspx.cs">
+      <DependentUpon>MntBienMueble.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntBienMueble.aspx.designer.cs">
+      <DependentUpon>MntBienMueble.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntBienRaiz.aspx.cs">
+      <DependentUpon>MntBienRaiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntBienRaiz.aspx.designer.cs">
+      <DependentUpon>MntBienRaiz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntClientes.aspx.cs">
+      <DependentUpon>MntClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntClientes.aspx.designer.cs">
+      <DependentUpon>MntClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntConservadores.aspx.cs">
+      <DependentUpon>MntConservadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntConservadores.aspx.designer.cs">
+      <DependentUpon>MntConservadores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntDeudores.aspx.cs">
+      <DependentUpon>MntDeudores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntDeudores.aspx.designer.cs">
+      <DependentUpon>MntDeudores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntDomicilios.aspx.cs">
+      <DependentUpon>MntDomicilios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntDomicilios.aspx.designer.cs">
+      <DependentUpon>MntDomicilios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntEstadosReconstitucion.aspx.cs">
+      <DependentUpon>MntEstadosReconstitucion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntEstadosReconstitucion.aspx.designer.cs">
+      <DependentUpon>MntEstadosReconstitucion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntGastosEstadosReconstitucion.aspx.cs">
+      <DependentUpon>MntGastosEstadosReconstitucion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntGastosEstadosReconstitucion.aspx.designer.cs">
+      <DependentUpon>MntGastosEstadosReconstitucion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntParametros.aspx.cs">
+      <DependentUpon>MntParametros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntParametros.aspx.designer.cs">
+      <DependentUpon>MntParametros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntParametrosClientes.aspx.cs">
+      <DependentUpon>MntParametrosClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntParametrosClientes.aspx.designer.cs">
+      <DependentUpon>MntParametrosClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntProcuradoresXJuicio.aspx.cs">
+      <DependentUpon>MntProcuradoresXJuicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntProcuradoresXJuicio.aspx.designer.cs">
+      <DependentUpon>MntProcuradoresXJuicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntSubTramites.aspx.cs">
+      <DependentUpon>MntSubTramites.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntSubTramites.aspx.designer.cs">
+      <DependentUpon>MntSubTramites.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntTelefonos.aspx.cs">
+      <DependentUpon>MntTelefonos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntTelefonos.aspx.designer.cs">
+      <DependentUpon>MntTelefonos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntUsuarios.aspx.cs">
+      <DependentUpon>MntUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\MntUsuarios.aspx.designer.cs">
+      <DependentUpon>MntUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\RelacionBienes\BienesMueblesDelCliente.aspx.cs">
+      <DependentUpon>BienesMueblesDelCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\RelacionBienes\BienesMueblesDelCliente.aspx.designer.cs">
+      <DependentUpon>BienesMueblesDelCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\RelacionBienes\BienesRaicesDelCliente.aspx.cs">
+      <DependentUpon>BienesRaicesDelCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\RelacionBienes\BienesRaicesDelCliente.aspx.designer.cs">
+      <DependentUpon>BienesRaicesDelCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\RelacionBienes\Descargar.aspx.cs">
+      <DependentUpon>Descargar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\RelacionBienes\Descargar.aspx.designer.cs">
+      <DependentUpon>Descargar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\RelacionBienes\Mantenedor.aspx.cs">
+      <DependentUpon>Mantenedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\RelacionBienes\Mantenedor.aspx.designer.cs">
+      <DependentUpon>Mantenedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\RelacionBienes\MantenedorBienMuebles.aspx.cs">
+      <DependentUpon>MantenedorBienMuebles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\RelacionBienes\MantenedorBienMuebles.aspx.designer.cs">
+      <DependentUpon>MantenedorBienMuebles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\RelacionBienes\ReporteBienesMueblesDelCliente.aspx.cs">
+      <DependentUpon>ReporteBienesMueblesDelCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\RelacionBienes\ReporteBienesMueblesDelCliente.aspx.designer.cs">
+      <DependentUpon>ReporteBienesMueblesDelCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\RelacionBienes\ReporteBienesRaicesDelCliente.aspx.cs">
+      <DependentUpon>ReporteBienesRaicesDelCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\RelacionBienes\ReporteBienesRaicesDelCliente.aspx.designer.cs">
+      <DependentUpon>ReporteBienesRaicesDelCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\Remesas\Listar.aspx.cs">
+      <DependentUpon>Listar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\Remesas\Listar.aspx.designer.cs">
+      <DependentUpon>Listar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\Remesas\Mantenedor.aspx.cs">
+      <DependentUpon>Mantenedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\Remesas\Mantenedor.aspx.designer.cs">
+      <DependentUpon>Mantenedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\Riesgo\Listar.aspx.cs">
+      <DependentUpon>Listar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\Riesgo\Listar.aspx.designer.cs">
+      <DependentUpon>Listar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\Riesgo\Mantenedor.aspx.cs">
+      <DependentUpon>Mantenedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\Riesgo\Mantenedor.aspx.designer.cs">
+      <DependentUpon>Mantenedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\SubTramite\Listar.aspx.cs">
+      <DependentUpon>Listar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\SubTramite\Listar.aspx.designer.cs">
+      <DependentUpon>Listar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\SubTramite\Mantenedor.aspx.cs">
+      <DependentUpon>Mantenedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\mantenedores\SubTramite\Mantenedor.aspx.designer.cs">
+      <DependentUpon>Mantenedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Metas\Listado.aspx.cs">
+      <DependentUpon>Listado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Metas\Listado.aspx.designer.cs">
+      <DependentUpon>Listado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Metas\Mantenedor.aspx.cs">
+      <DependentUpon>Mantenedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Metas\Mantenedor.aspx.designer.cs">
+      <DependentUpon>Mantenedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Prendas\buscaCobranzaPrenda.aspx.cs">
+      <DependentUpon>buscaCobranzaPrenda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Prendas\buscaCobranzaPrenda.aspx.designer.cs">
+      <DependentUpon>buscaCobranzaPrenda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Prendas\Prenda.aspx.cs">
+      <DependentUpon>Prenda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Prendas\Prenda.aspx.designer.cs">
+      <DependentUpon>Prenda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ActividadCobranza.aspx.cs">
+      <DependentUpon>ActividadCobranza.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ActividadCobranza.aspx.designer.cs">
+      <DependentUpon>ActividadCobranza.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ActividadesExhorto.aspx.cs">
+      <DependentUpon>ActividadesExhorto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ActividadesExhorto.aspx.designer.cs">
+      <DependentUpon>ActividadesExhorto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ActividadesPrejudiciales.aspx.cs">
+      <DependentUpon>ActividadesPrejudiciales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ActividadesPrejudiciales.aspx.designer.cs">
+      <DependentUpon>ActividadesPrejudiciales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\BuscaCobranza.aspx.cs">
+      <DependentUpon>BuscaCobranza.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\BuscaCobranza.aspx.designer.cs">
+      <DependentUpon>BuscaCobranza.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\BuscaCobranzaEstado.aspx.cs">
+      <DependentUpon>BuscaCobranzaEstado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\BuscaCobranzaEstado.aspx.designer.cs">
+      <DependentUpon>BuscaCobranzaEstado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\BuscaCobranzaExhortos.aspx.cs">
+      <DependentUpon>BuscaCobranzaExhortos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\BuscaCobranzaExhortos.aspx.designer.cs">
+      <DependentUpon>BuscaCobranzaExhortos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\BuscaCobranzaPrejudicial.aspx.cs">
+      <DependentUpon>BuscaCobranzaPrejudicial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\BuscaCobranzaPrejudicial.aspx.designer.cs">
+      <DependentUpon>BuscaCobranzaPrejudicial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\BuscaDocuPrejudicial.aspx.cs">
+      <DependentUpon>BuscaDocuPrejudicial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\BuscaDocuPrejudicial.aspx.designer.cs">
+      <DependentUpon>BuscaDocuPrejudicial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\BuscaExhorto.aspx.cs">
+      <DependentUpon>BuscaExhorto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\BuscaExhorto.aspx.designer.cs">
+      <DependentUpon>BuscaExhorto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\BuscaJuicio.aspx.cs">
+      <DependentUpon>BuscaJuicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\BuscaJuicio.aspx.designer.cs">
+      <DependentUpon>BuscaJuicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\CallCenter\EntradaVicidial.aspx.cs">
+      <DependentUpon>EntradaVicidial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\CallCenter\EntradaVicidial.aspx.designer.cs">
+      <DependentUpon>EntradaVicidial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\CallCenter\EntradaVicidialArchivo.aspx.cs">
+      <DependentUpon>EntradaVicidialArchivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\CallCenter\EntradaVicidialArchivo.aspx.designer.cs">
+      <DependentUpon>EntradaVicidialArchivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\CallCenter\IngresoDisposicion.aspx.cs">
+      <DependentUpon>IngresoDisposicion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\CallCenter\IngresoDisposicion.aspx.designer.cs">
+      <DependentUpon>IngresoDisposicion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\CallCenter\ListadoComentarios.aspx.cs">
+      <DependentUpon>ListadoComentarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\CallCenter\ListadoComentarios.aspx.designer.cs">
+      <DependentUpon>ListadoComentarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\CallCenter\ListadoEntradasVicidial.aspx.cs">
+      <DependentUpon>ListadoEntradasVicidial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\CallCenter\ListadoEntradasVicidial.aspx.designer.cs">
+      <DependentUpon>ListadoEntradasVicidial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Cheque.aspx.cs">
+      <DependentUpon>Cheque.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Cheque.aspx.designer.cs">
+      <DependentUpon>Cheque.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Cobranza.aspx.cs">
+      <DependentUpon>Cobranza.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Cobranza.aspx.designer.cs">
+      <DependentUpon>Cobranza.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Consultas_Juicios.aspx.cs">
+      <DependentUpon>Consultas_Juicios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Consultas_Juicios.aspx.designer.cs">
+      <DependentUpon>Consultas_Juicios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Correo\FormatoAvisoSuspencionAcciones.aspx.cs">
+      <DependentUpon>FormatoAvisoSuspencionAcciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Correo\FormatoAvisoSuspencionAcciones.aspx.designer.cs">
+      <DependentUpon>FormatoAvisoSuspencionAcciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Correo\NotificacionRequerimiento.aspx.cs">
+      <DependentUpon>NotificacionRequerimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Correo\NotificacionRequerimiento.aspx.designer.cs">
+      <DependentUpon>NotificacionRequerimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Cuotacolegio.aspx.cs">
+      <DependentUpon>Cuotacolegio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Cuotacolegio.aspx.designer.cs">
+      <DependentUpon>Cuotacolegio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\DocEstandard_1.aspx.cs">
+      <DependentUpon>DocEstandard_1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\DocEstandard_1.aspx.designer.cs">
+      <DependentUpon>DocEstandard_1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\DocEstandard_2.aspx.cs">
+      <DependentUpon>DocEstandard_2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\DocEstandard_2.aspx.designer.cs">
+      <DependentUpon>DocEstandard_2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\DocEstandard_3.aspx.cs">
+      <DependentUpon>DocEstandard_3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\DocEstandard_3.aspx.designer.cs">
+      <DependentUpon>DocEstandard_3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\DocEstandard_4.aspx.cs">
+      <DependentUpon>DocEstandard_4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\DocEstandard_4.aspx.designer.cs">
+      <DependentUpon>DocEstandard_4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\DocuJuicio.aspx.cs">
+      <DependentUpon>DocuJuicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\DocuJuicio.aspx.designer.cs">
+      <DependentUpon>DocuJuicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\DocuPagare.aspx.cs">
+      <DependentUpon>DocuPagare.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\DocuPagare.aspx.designer.cs">
+      <DependentUpon>DocuPagare.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ExceDocu_estandard1.aspx.cs">
+      <DependentUpon>ExceDocu_estandard1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ExceDocu_estandard1.aspx.designer.cs">
+      <DependentUpon>ExceDocu_estandard1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ExceDocu_estandard2.aspx.cs">
+      <DependentUpon>ExceDocu_estandard2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ExceDocu_estandard2.aspx.designer.cs">
+      <DependentUpon>ExceDocu_estandard2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ExceDocu_estandard3.aspx.cs">
+      <DependentUpon>ExceDocu_estandard3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ExceDocu_estandard3.aspx.designer.cs">
+      <DependentUpon>ExceDocu_estandard3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ExceDocu_estandard4.aspx.cs">
+      <DependentUpon>ExceDocu_estandard4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ExceDocu_estandard4.aspx.designer.cs">
+      <DependentUpon>ExceDocu_estandard4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ExceDocu_jui.aspx.cs">
+      <DependentUpon>ExceDocu_jui.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ExceDocu_jui.aspx.designer.cs">
+      <DependentUpon>ExceDocu_jui.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ExceDocu_PAG.aspx.cs">
+      <DependentUpon>ExceDocu_PAG.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ExceDocu_PAG.aspx.designer.cs">
+      <DependentUpon>ExceDocu_PAG.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ExcelBienRaiz.aspx.cs">
+      <DependentUpon>ExcelBienRaiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ExcelBienRaiz.aspx.designer.cs">
+      <DependentUpon>ExcelBienRaiz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ExcelDomicilios.aspx.cs">
+      <DependentUpon>ExcelDomicilios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ExcelDomicilios.aspx.designer.cs">
+      <DependentUpon>ExcelDomicilios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Excelfonos.aspx.cs">
+      <DependentUpon>Excelfonos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Excelfonos.aspx.designer.cs">
+      <DependentUpon>Excelfonos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ExceMutuo.aspx.cs">
+      <DependentUpon>ExceMutuo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ExceMutuo.aspx.designer.cs">
+      <DependentUpon>ExceMutuo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Exce_actividades.aspx.cs">
+      <DependentUpon>Exce_actividades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Exce_actividades.aspx.designer.cs">
+      <DependentUpon>Exce_actividades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Exhorto.aspx.cs">
+      <DependentUpon>Exhorto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Exhorto.aspx.designer.cs">
+      <DependentUpon>Exhorto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ExportarExcelJuicio.aspx.cs">
+      <DependentUpon>ExportarExcelJuicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\ExportarExcelJuicio.aspx.designer.cs">
+      <DependentUpon>ExportarExcelJuicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\frmControlTablero.aspx.cs">
+      <DependentUpon>frmControlTablero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\frmControlTablero.aspx.designer.cs">
+      <DependentUpon>frmControlTablero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Juicio.aspx.cs">
+      <DependentUpon>Juicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Juicio.aspx.designer.cs">
+      <DependentUpon>Juicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\JuicioBusca.aspx.cs">
+      <DependentUpon>JuicioBusca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\JuicioBusca.aspx.designer.cs">
+      <DependentUpon>JuicioBusca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\JuicioBuscaResponsable.aspx.cs">
+      <DependentUpon>JuicioBuscaResponsable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\JuicioBuscaResponsable.aspx.designer.cs">
+      <DependentUpon>JuicioBuscaResponsable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\juicioestado.aspx.cs">
+      <DependentUpon>juicioestado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\juicioestado.aspx.designer.cs">
+      <DependentUpon>juicioestado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\LimpiaTablas.aspx.cs">
+      <DependentUpon>LimpiaTablas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\LimpiaTablas.aspx.designer.cs">
+      <DependentUpon>LimpiaTablas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarActividades.aspx.cs">
+      <DependentUpon>MostrarActividades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarActividades.aspx.designer.cs">
+      <DependentUpon>MostrarActividades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarActividadesExhorto.aspx.cs">
+      <DependentUpon>MostrarActividadesExhorto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarActividadesExhorto.aspx.designer.cs">
+      <DependentUpon>MostrarActividadesExhorto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarActividadesPrejudiciales.aspx.cs">
+      <DependentUpon>MostrarActividadesPrejudiciales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarActividadesPrejudiciales.aspx.designer.cs">
+      <DependentUpon>MostrarActividadesPrejudiciales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarBienRaiz.aspx.cs">
+      <DependentUpon>MostrarBienRaiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarBienRaiz.aspx.designer.cs">
+      <DependentUpon>MostrarBienRaiz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarCuotaColegio.aspx.cs">
+      <DependentUpon>MostrarCuotaColegio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarCuotaColegio.aspx.designer.cs">
+      <DependentUpon>MostrarCuotaColegio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarDocuEstandard1Consula.aspx.cs">
+      <DependentUpon>MostrarDocuEstandard1Consula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarDocuEstandard1Consula.aspx.designer.cs">
+      <DependentUpon>MostrarDocuEstandard1Consula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarDocuEstandard2Consula.aspx.cs">
+      <DependentUpon>MostrarDocuEstandard2Consula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarDocuEstandard2Consula.aspx.designer.cs">
+      <DependentUpon>MostrarDocuEstandard2Consula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarDocuEstandard3Consula.aspx.cs">
+      <DependentUpon>MostrarDocuEstandard3Consula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarDocuEstandard3Consula.aspx.designer.cs">
+      <DependentUpon>MostrarDocuEstandard3Consula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarDocuEstandard4Consula.aspx.cs">
+      <DependentUpon>MostrarDocuEstandard4Consula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarDocuEstandard4Consula.aspx.designer.cs">
+      <DependentUpon>MostrarDocuEstandard4Consula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarDocuJuicio.aspx.cs">
+      <DependentUpon>MostrarDocuJuicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarDocuJuicio.aspx.designer.cs">
+      <DependentUpon>MostrarDocuJuicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarDocuJuicioConsulta.aspx.cs">
+      <DependentUpon>MostrarDocuJuicioConsulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarDocuJuicioConsulta.aspx.designer.cs">
+      <DependentUpon>MostrarDocuJuicioConsulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarDocuMutuoConsula.aspx.cs">
+      <DependentUpon>MostrarDocuMutuoConsula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarDocuMutuoConsula.aspx.designer.cs">
+      <DependentUpon>MostrarDocuMutuoConsula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarDocuPagare.aspx.cs">
+      <DependentUpon>MostrarDocuPagare.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarDocuPagare.aspx.designer.cs">
+      <DependentUpon>MostrarDocuPagare.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarDocuPagareConsulta.aspx.cs">
+      <DependentUpon>MostrarDocuPagareConsulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarDocuPagareConsulta.aspx.designer.cs">
+      <DependentUpon>MostrarDocuPagareConsulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarDomicilios.aspx.cs">
+      <DependentUpon>MostrarDomicilios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarDomicilios.aspx.designer.cs">
+      <DependentUpon>MostrarDomicilios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarfonosDeudor.aspx.cs">
+      <DependentUpon>MostrarfonosDeudor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\MostrarfonosDeudor.aspx.designer.cs">
+      <DependentUpon>MostrarfonosDeudor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Mutuo.aspx.cs">
+      <DependentUpon>Mutuo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Mutuo.aspx.designer.cs">
+      <DependentUpon>Mutuo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Pagare.aspx.cs">
+      <DependentUpon>Pagare.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Pagare.aspx.designer.cs">
+      <DependentUpon>Pagare.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Tablero.aspx.cs">
+      <DependentUpon>Tablero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\Tablero.aspx.designer.cs">
+      <DependentUpon>Tablero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\TABLERO2.aspx.cs">
+      <DependentUpon>TABLERO2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\TABLERO2.aspx.designer.cs">
+      <DependentUpon>TABLERO2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\TableroExcel.aspx.cs">
+      <DependentUpon>TableroExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Procesos\TableroExcel.aspx.designer.cs">
+      <DependentUpon>TableroExcel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Pruebas\SP.aspx.cs">
+      <DependentUpon>SP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Pruebas\SP.aspx.designer.cs">
+      <DependentUpon>SP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\BitacoraEstados.aspx.cs">
+      <DependentUpon>BitacoraEstados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\BitacoraEstados.aspx.designer.cs">
+      <DependentUpon>BitacoraEstados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\BitacoraEstadosExcel.aspx.cs">
+      <DependentUpon>BitacoraEstadosExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\BitacoraEstadosExcel.aspx.designer.cs">
+      <DependentUpon>BitacoraEstadosExcel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\BuscaAsignacion.aspx.cs">
+      <DependentUpon>BuscaAsignacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\BuscaAsignacion.aspx.designer.cs">
+      <DependentUpon>BuscaAsignacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\BuscaReasignacion.aspx.cs">
+      <DependentUpon>BuscaReasignacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\BuscaReasignacion.aspx.designer.cs">
+      <DependentUpon>BuscaReasignacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\BuscaReconstitucion.aspx.cs">
+      <DependentUpon>BuscaReconstitucion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\BuscaReconstitucion.aspx.designer.cs">
+      <DependentUpon>BuscaReconstitucion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\Carga.aspx.cs">
+      <DependentUpon>Carga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\Carga.aspx.designer.cs">
+      <DependentUpon>Carga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\CargaManual.aspx.cs">
+      <DependentUpon>CargaManual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\CargaManual.aspx.designer.cs">
+      <DependentUpon>CargaManual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\CargaMasiva.aspx.cs">
+      <DependentUpon>CargaMasiva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\CargaMasiva.aspx.designer.cs">
+      <DependentUpon>CargaMasiva.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\ConsultaGastos.aspx.cs">
+      <DependentUpon>ConsultaGastos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\ConsultaGastos.aspx.designer.cs">
+      <DependentUpon>ConsultaGastos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\Digitalizar.aspx.cs">
+      <DependentUpon>Digitalizar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\Digitalizar.aspx.designer.cs">
+      <DependentUpon>Digitalizar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\DocDigitalizados.aspx.cs">
+      <DependentUpon>DocDigitalizados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\DocDigitalizados.aspx.designer.cs">
+      <DependentUpon>DocDigitalizados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\ExcelBitacoraEstados.aspx.cs">
+      <DependentUpon>ExcelBitacoraEstados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\ExcelBitacoraEstados.aspx.designer.cs">
+      <DependentUpon>ExcelBitacoraEstados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\ExcelConsultaGastos.aspx.cs">
+      <DependentUpon>ExcelConsultaGastos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\ExcelConsultaGastos.aspx.designer.cs">
+      <DependentUpon>ExcelConsultaGastos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\ExcelGastos.aspx.cs">
+      <DependentUpon>ExcelGastos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\ExcelGastos.aspx.designer.cs">
+      <DependentUpon>ExcelGastos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\frmReconstitucion.aspx.cs">
+      <DependentUpon>frmReconstitucion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\frmReconstitucion.aspx.designer.cs">
+      <DependentUpon>frmReconstitucion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\frmReconstitucionMarca.aspx.cs">
+      <DependentUpon>frmReconstitucionMarca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\frmReconstitucionMarca.aspx.designer.cs">
+      <DependentUpon>frmReconstitucionMarca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\InformeGeneral.aspx.cs">
+      <DependentUpon>InformeGeneral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\InformeGeneral.aspx.designer.cs">
+      <DependentUpon>InformeGeneral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\MenuReporte.aspx.cs">
+      <DependentUpon>MenuReporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\MenuReporte.aspx.designer.cs">
+      <DependentUpon>MenuReporte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\popAsignacion.aspx.cs">
+      <DependentUpon>popAsignacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\popAsignacion.aspx.designer.cs">
+      <DependentUpon>popAsignacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\popReasignar.aspx.cs">
+      <DependentUpon>popReasignar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\popReasignar.aspx.designer.cs">
+      <DependentUpon>popReasignar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\PruebaCarga.aspx.cs">
+      <DependentUpon>PruebaCarga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\PruebaCarga.aspx.designer.cs">
+      <DependentUpon>PruebaCarga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\ReconExcel.aspx.cs">
+      <DependentUpon>ReconExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\ReconExcel.aspx.designer.cs">
+      <DependentUpon>ReconExcel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\ReconstitucionGastos.aspx.cs">
+      <DependentUpon>ReconstitucionGastos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\ReconstitucionGastos.aspx.designer.cs">
+      <DependentUpon>ReconstitucionGastos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\ReconstitucionGastosEdicion.aspx.cs">
+      <DependentUpon>ReconstitucionGastosEdicion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\ReconstitucionGastosEdicion.aspx.designer.cs">
+      <DependentUpon>ReconstitucionGastosEdicion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\Reporte.aspx.cs">
+      <DependentUpon>Reporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\Reporte.aspx.designer.cs">
+      <DependentUpon>Reporte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\ReporteOtros.aspx.cs">
+      <DependentUpon>ReporteOtros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\ReporteOtros.aspx.designer.cs">
+      <DependentUpon>ReporteOtros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\ReporteOtrosMarca.aspx.cs">
+      <DependentUpon>ReporteOtrosMarca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\ReporteOtrosMarca.aspx.designer.cs">
+      <DependentUpon>ReporteOtrosMarca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\ReporteReconMarca.aspx.cs">
+      <DependentUpon>ReporteReconMarca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\ReporteReconMarca.aspx.designer.cs">
+      <DependentUpon>ReporteReconMarca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\Reversar.aspx.cs">
+      <DependentUpon>Reversar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\Reversar.aspx.designer.cs">
+      <DependentUpon>Reversar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\SubMenu.aspx.cs">
+      <DependentUpon>SubMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Reconstitucion\SubMenu.aspx.designer.cs">
+      <DependentUpon>SubMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\RedireccionMantenedor.aspx.cs">
+      <DependentUpon>RedireccionMantenedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\RedireccionMantenedor.aspx.designer.cs">
+      <DependentUpon>RedireccionMantenedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contacto.aspx.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacto.aspx.designer.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dto\CabezaCuotaColegio.cs" />
+    <Compile Include="Dto\CabezaPrejudicialDTO.cs" />
+    <Compile Include="Dto\CabezeraActividadesDTO.cs" />
+    <Compile Include="Dto\CabezeraActividadesExhortoDTO.cs" />
+    <Compile Include="Dto\CabezeraGastosDTO.cs" />
+    <Compile Include="Dto\CobranzaDTO.cs" />
+    <Compile Include="Formatos\Principal.Master.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formatos\Principal.Master.designer.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Indice.aspx.cs">
+      <DependentUpon>Indice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Indice.aspx.designer.cs">
+      <DependentUpon>Indice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LectorCodigo.aspx.cs">
+      <DependentUpon>LectorCodigo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LectorCodigo.aspx.designer.cs">
+      <DependentUpon>LectorCodigo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="masters\Master.Master.cs">
+      <DependentUpon>Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="masters\Master.Master.designer.cs">
+      <DependentUpon>Master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="masters\Menu.Master.cs">
+      <DependentUpon>Menu.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="masters\Menu.Master.designer.cs">
+      <DependentUpon>Menu.Master</DependentUpon>
+    </Compile>
+    <Compile Include="principal\Clientes.aspx.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="principal\Clientes.aspx.designer.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="principal\Cobertura.aspx.cs">
+      <DependentUpon>Cobertura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="principal\Cobertura.aspx.designer.cs">
+      <DependentUpon>Cobertura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="principal\contacto.aspx.cs">
+      <DependentUpon>contacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="principal\contacto.aspx.designer.cs">
+      <DependentUpon>contacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="principal\Equipo.aspx.cs">
+      <DependentUpon>Equipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="principal\Equipo.aspx.designer.cs">
+      <DependentUpon>Equipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="principal\Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="principal\Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="principal\QuienesSomos.aspx.cs">
+      <DependentUpon>QuienesSomos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="principal\QuienesSomos.aspx.designer.cs">
+      <DependentUpon>QuienesSomos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="principal\Servicios.aspx.cs">
+      <DependentUpon>Servicios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="principal\Servicios.aspx.designer.cs">
+      <DependentUpon>Servicios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="principal\ServiciosDetalle.aspx.cs">
+      <DependentUpon>ServiciosDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="principal\ServiciosDetalle.aspx.designer.cs">
+      <DependentUpon>ServiciosDetalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="principal\SolicitudDocuemntos.aspx.cs">
+      <DependentUpon>SolicitudDocuemntos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="principal\SolicitudDocuemntos.aspx.designer.cs">
+      <DependentUpon>SolicitudDocuemntos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="principal\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="principal\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Requerimientos\Listado.aspx.cs">
+      <DependentUpon>Listado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Requerimientos\Listado.aspx.designer.cs">
+      <DependentUpon>Listado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Requerimientos\Mantenedor.aspx.cs">
+      <DependentUpon>Mantenedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Requerimientos\Mantenedor.aspx.designer.cs">
+      <DependentUpon>Mantenedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Servicios\ListadosAutocompletar.svc.cs">
+      <DependentUpon>ListadosAutocompletar.svc</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Cobranza\Demandas\Temporal\1806201408394163843_249205\" />
+    <Folder Include="Cobranza\Demandas\Temporal\1806201408425128647_343638\" />
+    <Folder Include="Cobranza\Demandas\Temporal\1806201408434925683_811946\" />
+    <Folder Include="Cobranza\Demandas\Temporal\1806201408445461835_16096\" />
+    <Folder Include="Cobranza\Demandas\Temporal\1806201408454912010_193922\" />
+    <Folder Include="Cobranza\Demandas\Temporal\1806201408484710900_64773\" />
+    <Folder Include="Cobranza\Demandas\Temporal\1806201408484781220_327119\" />
+    <Folder Include="Cobranza\Demandas\Temporal\1905201409280423750_348041\" />
+    <Folder Include="Cobranza\Demandas\Temporal\1905201409283499666_920667\" />
+    <Folder Include="Cobranza\Demandas\Temporal\1905201409314444007_963286\" />
+    <Folder Include="Cobranza\Documentos\Temporal\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Acceso.aspx" />
+    <Content Include="ALC.HTML" />
+    <Content Include="ALC.swf" />
+    <Content Include="alc2.css" />
+    <Content Include="ALCBANNER.HTML" />
+    <Content Include="ALCBANNER.swf" />
+    <Content Include="asesoria.swf" />
+    <Content Include="blanco.aspx" />
+    <Content Include="Cobranza\Abonos\-om5.asp" />
+    <Content Include="Cobranza\Abonos\-ul.asp" />
+    <Content Include="Cobranza\Abonos\AbonoParcial.aspx" />
+    <Content Include="Cobranza\Abonos\Abonos.aspx" />
+    <Content Include="Cobranza\Abonos\buscaCobranzaAbonos.aspx" />
+    <Content Include="Cobranza\Abonos\ComprobanteAbono.aspx" />
+    <Content Include="Cobranza\Abonos\ComprobanteParcial.aspx" />
+    <Content Include="Cobranza\Abonos\ComprobanteRendicion.aspx" />
+    <Content Include="Cobranza\Abonos\DetalleCliente.aspx" />
+    <Content Include="Cobranza\Abonos\DetalleRendicion.aspx" />
+    <Content Include="Cobranza\Abonos\LiberarCheques.aspx" />
+    <Content Include="Cobranza\Abonos\MuestraDesglose.aspx" />
+    <Content Include="Cobranza\Abonos\MuestraRendicion.aspx" />
+    <Content Include="Cobranza\Abonos\PagoAbono.aspx" />
+    <Content Include="Cobranza\Abonos\PagoAbonoSub.aspx" />
+    <Content Include="Cobranza\Alzamientos\CargaMasivaRemesa.aspx" />
+    <Content Include="Cobranza\Alzamientos\ListadoAlzamientos.aspx" />
+    <Content Include="Cobranza\Alzamientos\ListadoRemesas.aspx" />
+    <Content Include="Cobranza\Alzamientos\MantenedorAlzamiento.aspx" />
+    <Content Include="Cobranza\CalculoLiquidacion\BuscaCobranzaLiquidacion.aspx" />
+    <Content Include="Cobranza\CalculoLiquidacion\CalculoLiquidacion.aspx" />
+    <Content Include="Cobranza\CargasMasivas\IngresoArchivo.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\AbonosExcel.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\BienMueble.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\BuscaCobranza.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\BuscaCobranzaConsulta.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\BuscaConsultaJuicio.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\BuscaGeneral.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\BuscaGeneral2.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\BuscaGeneral3.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\BuscaPrejudicial.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\ConsultaAbonos.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\ConsultaCobranza.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\ConsultaExhorto.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\ConsultaJuicioEtapa.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\ConsultaJuicioEtapaDOS.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\ConsultaPrejudicial.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\ExcelBienMueble.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\ExhortoExcel.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\GrillaDomicilios.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\GrillaExhorto.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\GrillaTelefonos.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\IngresarRespExhorto.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\jui_EtapaExcel.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\ListarPorRiesgo.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\popBienes.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\ReporteConsultaGeneralBieneMuebles.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\ReporteConsultaGeneralBieneRaices.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\ReporteExcelJuicioEtapa.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\ReporteJuicioGeneral.aspx" />
+    <Content Include="Cobranza\ConsultaEspecial\ReporteListarPorRiesgo.aspx" />
+    <Content Include="Cobranza\Consultas\calendario.aspx" />
+    <Content Include="Cobranza\Consultas\Prueba.aspx" />
+    <Content Include="Cobranza\Demandas\DatosCobranza.aspx" />
+    <Content Include="Cobranza\Demandas\Descargar.aspx" />
+    <Content Include="Cobranza\Demandas\Formatos\01_CitacionConfesarDeudaCheque.aspx" />
+    <Content Include="Cobranza\Demandas\Formatos\02_CitacionConfesarDeudaFactura.aspx" />
+    <Content Include="Cobranza\Demandas\Formatos\03_DemandaEjecutivaCheque.aspx" />
+    <Content Include="Cobranza\Demandas\Formatos\04_DemandaEjecutivaLetraDeCambio.aspx" />
+    <Content Include="Cobranza\Demandas\Formatos\05_DemandaEjecutivaPagareBbvaAvalYExhorto.aspx" />
+    <Content Include="Cobranza\Demandas\Formatos\06_DemandaEjecutivaPagareCreditoUniversitario.aspx" />
+    <Content Include="Cobranza\Demandas\Formatos\07_GestionVoluntariaExtravioDeTitulos.aspx" />
+    <Content Include="Cobranza\Demandas\Formatos\08_OrdinariaMenorCuantiaCobroPesos.aspx" />
+    <Content Include="Cobranza\Demandas\Formatos\09_PreparacionNotificacionProtestoDeCheque.aspx" />
+    <Content Include="Cobranza\Demandas\Formatos\DdaBbvaCorrigida2014PagareConExhorto.aspx" />
+    <Content Include="Cobranza\Demandas\Formatos\DdaBbvaCorrigida2014PagareSinExhorto.aspx" />
+    <Content Include="Cobranza\Demandas\Formatos\DdaPagareBbvaConAvalConExhUf.aspx" />
+    <Content Include="Cobranza\Demandas\Formatos\DdaUfConExhorto.aspx" />
+    <Content Include="Cobranza\Demandas\Formatos\DdaUfSinExhorto.aspx" />
+    <Content Include="Cobranza\Demandas\Formatos\DdaVisaBbvaSinExhFlores.aspx" />
+    <Content Include="Cobranza\Demandas\Listado.aspx" />
+    <Content Include="Cobranza\Digitalizar\DigiConsulta.aspx" />
+    <Content Include="Cobranza\Digitalizar\Digitalizar.aspx" />
+    <Content Include="Cobranza\Documentos\Descargar.aspx" />
+    <Content Include="Cobranza\Documentos\DescargarArchivo.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\Bienes\InformeBienMuebles.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\Bienes\InformeBienMuebles_Negativa.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\Bienes\InformeBienRaiz.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\Bienes\InformeBienRaiz_Negativa.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\CertifiqueDecreteRemate.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DecretoRemate.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosCinco\AcompanaDocumentos.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosCinco\AcompanaDocumentosConCitacion.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosCinco\DevuelveExhortoEmbargoPositivoNuevoExhortoRetiro.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosCinco\DevuelveExhortoYSeDictaSentenciaVoluntaria.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosCinco\ExtractoVoluntaria.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosCinco\SeCertifiqueEjecutoriaYCopiasAutorizadasVoluntarias.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosCinco\SeDaPorNotificadoVoluntarias.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosCinco\SeDicteSentenciaDeExtravioVoluntaria.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosCinco\SolicitaCopiasAutorizadasVoluntarias.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosCuatro\AutorizacionDevolucionDeDocumentos.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosCuatro\AutorizacionRetiroExhorto.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosCuatro\AvisoSuspencionDeJuicio.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosCuatro\AvisoTerminoDeJuicio.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosCuatro\CertificadoNroExcArt472.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosCuatro\CumpleLoOrdenadoCalculo.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosCuatro\DelegaPode.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosCuatro\NotificacionPorArt52.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosCuatro\SeDaPorNotificadoDemandaCuge.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosCuatro\SenalaBienEmbargoDevolucionDeImpuesto.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosCuatro\SenalaBienEmbargoVehiculo.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosCuatro\SeTengaPorPreparadaViaEjecutada.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosCuatro\SolicitudQueIndica.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosDos\AcompanaLiquidacionHipotecariaTasacionCostas.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosDos\BasesRemateTipoJuicioEjecutivo.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosDos\BasesRemateTipoJuicioHipotecario.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosDos\CumpleLoOrdenadoTipo.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosDos\DesignacionMartilleroYRetiro.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosDos\DEV_EXH_PositivoSeCertifiqueHipotecario.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosDos\DEV_EXH_PositivoSeCertifiqueYDecretoRemateHipotecario.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosDos\DiaHoraSubasta.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosDos\RetiroVehiculoTipo.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosDos\SeCertificaPagareNoExcepcionesTipo.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosDos\SeGireCheque.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosDos\SenalaBienEmbargoPropiedadExhortoTipo.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosDos\SenalaBienEmbargoPropiedadTipo.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosDos\SenalaNuevoDomicilioExhorto.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosDos\SenalaNuevoDomicilioTipo.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosDos\SeResuelvaBases.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosDos\SeTengaComoMinimoParaSubastaAvaluo.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosDos\SolicitaDesarchivo.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosDos\SolicitaExhortoCedulaRemateTipo.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosDos\SolicitaExhortoConFacultadesFuerzaPublicaTipo.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosDos\SolicitaExhortoNotifART52Tipo.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosDos\SolicitaExhortoNotificacionTipo.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosDos\SolicitaOficiosQueIndicaTipo.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosSeis\AcompanaDocumentosTanner.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosSeis\AmpliacionEmbargoInmueble.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosSeis\AmpliacionEmbargoInmuebleExhorto.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosSeis\CartaPlanNormalizacionBBVA.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosSeis\TransaccionPutBbva.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosSiete\AcompañaDocumentosTannerFactorline.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosSiete\SenalaBienPropiedadDerecho.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosTres\AcompanaOficioYNuevoDomicilio.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosTres\ActualizaMinimoAvaluoFiscal.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosTres\CertificaExtravioCuaderno.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosTres\DaCuentaDePagoDevolucionTituloDeudor.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosTres\DaCuentaDePagoYRetiro.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosTres\DaCuentaNormalizacion.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosTres\DevuelveExhortoNegativoNuevoDocNuevoEx.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosTres\DevuelveExhortosYExEmbargo.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosTres\EncargoBusquedaDeBienes.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosTres\EncargoBusquedaDeDomicilio.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosTres\EncargoReceptor.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosTres\EncargoTrabajoProcurador.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosTres\FuerzaPublicaEmbargo.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosTres\FuerzaPublicaRetiro.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosTres\RetiroDeDemanda.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\DocumentosTres\RetiroDeDemandaYDevolucionDocumento.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\Domicilios\InformeDomicilios.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\Gastos\ComprobanteIngreso.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\JuiciosPagare\DaCuentaPagoDevolucionDocumento.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\JuiciosPagare\ProposicionBasesRemate.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\JuiciosPagare\ProposicionMartillero.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\NotificacionConformidadArticulo44.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\PruebaDocumentos\AcompañaDocumentoTannerAutofin.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\PruebaDocumentos\CertificadoEjecutoriaAvenimiento.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\PruebaDocumentos\CursoProgresivo.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\PruebaDocumentos\DevuelveExhortoDiligenciaYSolicitaExhortoRetiroAuto.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\PruebaDocumentos\EscritoPilotoRetiroDeTitulosBECO.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\PruebaDocumentos\RatificaFirma.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\PruebaDocumentos\ReceptorAdHoc.aspx" />
+    <Content Include="Cobranza\Documentos\Formatos\PruebaDocumentos\SolicitudAlzamientoInmuebleCorvalanPulgar.aspx" />
+    <Content Include="Cobranza\Documentos\General\GeneradorCodigoBarra.aspx" />
+    <Content Include="Cobranza\Documentos\Listado.aspx" />
+    <Content Include="Cobranza\Escritos\EscritoPrejudicial.aspx" />
+    <Content Include="Cobranza\Escritos\ImprimeEscritoPrejudicial.aspx" />
+    <Content Include="Cobranza\Gastos\BuscaCobranzaGastos.aspx" />
+    <Content Include="Cobranza\Gastos\ExcelGastos.aspx" />
+    <Content Include="Cobranza\Gastos\Gastos.aspx" />
+    <Content Include="Cobranza\Gastos\Listar.aspx" />
+    <Content Include="Cobranza\Gastos\MostrarDetalleGastos.aspx" />
+    <Content Include="Cobranza\Gestion\ControlJuiciosPorPlazos.aspx" />
+    <Content Include="Cobranza\Gestion\Metricas\Avances\AvancePorEtapa.aspx" />
+    <Content Include="Cobranza\Gestion\Metricas\Avances\AvancePorTramite.aspx" />
+    <Content Include="Cobranza\Gestion\Metricas\Avances\Cumplimiento.aspx" />
+    <Content Include="Cobranza\Gestion\Metricas\EstadosActuales\Clientes\ListadoClientes.aspx" />
+    <Content Include="Cobranza\Gestion\Metricas\EstadosActuales\Clientes\ListadoCobranzasClientes.aspx" />
+    <Content Include="Cobranza\Gestion\Metricas\EstadosActuales\Procuradores\ListadoCobranzasProcuradores.aspx" />
+    <Content Include="Cobranza\Gestion\Metricas\EstadosActuales\Procuradores\ListadoProcuradores.aspx" />
+    <Content Include="Cobranza\Gestion\Metricas\EstadosActuales\Procuradores\Resumen.aspx" />
+    <Content Include="Cobranza\Gestion\Metricas\EstadosActuales\Procuradores\ResumenCobranzasTermino.aspx" />
+    <Content Include="Cobranza\Gestion\Metricas\Listado.aspx" />
+    <Content Include="Cobranza\Gestion\Metricas\Mantenedor.aspx" />
+    <Content Include="Cobranza\listados\LisBienRaiz.aspx" />
+    <Content Include="Cobranza\listados\LisClientes.aspx" />
+    <Content Include="Cobranza\listados\LisCobranza.aspx" />
+    <Content Include="Cobranza\listados\LisDeudores.aspx" />
+    <Content Include="Cobranza\listados\LisDomicilios.aspx" />
+    <Content Include="Cobranza\listados\LisExhortos.aspx" />
+    <Content Include="Cobranza\listados\LisJuicio.aspx" />
+    <Content Include="Cobranza\listados\LisMutuo.aspx" />
+    <Content Include="Cobranza\listados\LisTelefono.aspx" />
+    <Content Include="Cobranza\listados\LisUsuarios.aspx" />
+    <Content Include="Cobranza\listados\Master.aspx" />
+    <Content Include="Cobranza\mantenedores\CambiaRol.aspx" />
+    <Content Include="Cobranza\mantenedores\FindExhorto.aspx" />
+    <Content Include="Cobranza\mantenedores\MarcaModelos\Agregar.aspx" />
+    <Content Include="Cobranza\mantenedores\MarcaModelos\Marca.aspx" />
+    <Content Include="Cobranza\mantenedores\MntBienMueble.aspx" />
+    <Content Include="Cobranza\mantenedores\MntBienRaiz.aspx" />
+    <Content Include="Cobranza\mantenedores\MntClientes.aspx" />
+    <Content Include="Cobranza\mantenedores\MntConservadores.aspx" />
+    <Content Include="Cobranza\mantenedores\MntDeudores.aspx" />
+    <Content Include="Cobranza\mantenedores\MntDomicilios.aspx" />
+    <Content Include="Cobranza\mantenedores\MntEstadosReconstitucion.aspx" />
+    <Content Include="Cobranza\mantenedores\MntGastosEstadosReconstitucion.aspx" />
+    <Content Include="Cobranza\mantenedores\MntParametros.aspx" />
+    <Content Include="Cobranza\mantenedores\MntParametrosClientes.aspx" />
+    <Content Include="Cobranza\mantenedores\MntProcuradoresXJuicio.aspx" />
+    <Content Include="Cobranza\mantenedores\MntSubTramites.aspx" />
+    <Content Include="Cobranza\mantenedores\MntTelefonos.aspx" />
+    <Content Include="Cobranza\mantenedores\MntUsuarios.aspx" />
+    <Content Include="Cobranza\mantenedores\RelacionBienes\BienesMueblesDelCliente.aspx" />
+    <Content Include="Cobranza\mantenedores\RelacionBienes\BienesRaicesDelCliente.aspx" />
+    <Content Include="Cobranza\mantenedores\RelacionBienes\Descargar.aspx" />
+    <Content Include="Cobranza\mantenedores\RelacionBienes\Mantenedor.aspx" />
+    <Content Include="Cobranza\mantenedores\RelacionBienes\MantenedorBienMuebles.aspx" />
+    <Content Include="Cobranza\mantenedores\RelacionBienes\ReporteBienesMueblesDelCliente.aspx" />
+    <Content Include="Cobranza\mantenedores\RelacionBienes\ReporteBienesRaicesDelCliente.aspx" />
+    <Content Include="Cobranza\mantenedores\Remesas\Listar.aspx" />
+    <Content Include="Cobranza\mantenedores\Remesas\Mantenedor.aspx" />
+    <Content Include="Cobranza\mantenedores\Riesgo\Listar.aspx" />
+    <Content Include="Cobranza\mantenedores\Riesgo\Mantenedor.aspx" />
+    <Content Include="Cobranza\mantenedores\SubTramite\Listar.aspx" />
+    <Content Include="Cobranza\mantenedores\SubTramite\Mantenedor.aspx" />
+    <Content Include="Cobranza\Metas\Listado.aspx" />
+    <Content Include="Cobranza\Metas\Mantenedor.aspx" />
+    <Content Include="Cobranza\Prendas\buscaCobranzaPrenda.aspx" />
+    <Content Include="Cobranza\Prendas\Prenda.aspx" />
+    <Content Include="Cobranza\Procesos\ActividadCobranza.aspx" />
+    <Content Include="Cobranza\Procesos\ActividadesExhorto.aspx" />
+    <Content Include="Cobranza\Procesos\ActividadesPrejudiciales.aspx" />
+    <Content Include="Cobranza\Procesos\BuscaCobranza.aspx" />
+    <Content Include="Cobranza\Procesos\BuscaCobranzaEstado.aspx" />
+    <Content Include="Cobranza\Procesos\BuscaCobranzaExhortos.aspx" />
+    <Content Include="Cobranza\Procesos\BuscaCobranzaPrejudicial.aspx" />
+    <Content Include="Cobranza\Procesos\BuscaDocuPrejudicial.aspx" />
+    <Content Include="Cobranza\Procesos\BuscaExhorto.aspx" />
+    <Content Include="Cobranza\Procesos\BuscaJuicio.aspx" />
+    <Content Include="Cobranza\Procesos\CallCenter\EntradaVicidial.aspx" />
+    <Content Include="Cobranza\Procesos\CallCenter\EntradaVicidialArchivo.aspx" />
+    <Content Include="Cobranza\Procesos\CallCenter\IngresoDisposicion.aspx" />
+    <Content Include="Cobranza\Procesos\CallCenter\ListadoComentarios.aspx" />
+    <Content Include="Cobranza\Procesos\CallCenter\ListadoEntradasVicidial.aspx" />
+    <Content Include="Cobranza\Procesos\Cheque.aspx" />
+    <Content Include="Cobranza\Procesos\Cobranza.aspx" />
+    <Content Include="Cobranza\Procesos\Consultas_Juicios.aspx" />
+    <Content Include="Cobranza\Procesos\Correo\FormatoAvisoSuspencionAcciones.aspx" />
+    <Content Include="Cobranza\Procesos\Correo\NotificacionRequerimiento.aspx" />
+    <Content Include="Cobranza\Procesos\Cuotacolegio.aspx" />
+    <Content Include="Cobranza\Procesos\DocEstandard_1.aspx" />
+    <Content Include="Cobranza\Procesos\DocEstandard_2.aspx" />
+    <Content Include="Cobranza\Procesos\DocEstandard_3.aspx" />
+    <Content Include="Cobranza\Procesos\DocEstandard_4.aspx" />
+    <Content Include="Cobranza\Procesos\DocuJuicio.aspx" />
+    <Content Include="Cobranza\Procesos\DocuPagare.aspx" />
+    <Content Include="Cobranza\Procesos\ExceDocu_estandard1.aspx" />
+    <Content Include="Cobranza\Procesos\ExceDocu_estandard2.aspx" />
+    <Content Include="Cobranza\Procesos\ExceDocu_estandard3.aspx" />
+    <Content Include="Cobranza\Procesos\ExceDocu_estandard4.aspx" />
+    <Content Include="Cobranza\Procesos\ExceDocu_jui.aspx" />
+    <Content Include="Cobranza\Procesos\ExceDocu_PAG.aspx" />
+    <Content Include="Cobranza\Procesos\ExcelBienRaiz.aspx" />
+    <Content Include="Cobranza\Procesos\ExcelDomicilios.aspx" />
+    <Content Include="Cobranza\Procesos\Excelfonos.aspx" />
+    <Content Include="Cobranza\Procesos\ExceMutuo.aspx" />
+    <Content Include="Cobranza\Procesos\Exce_actividades.aspx" />
+    <Content Include="Cobranza\Procesos\Exhorto.aspx" />
+    <Content Include="Cobranza\Procesos\ExportarExcelJuicio.aspx" />
+    <Content Include="Cobranza\Procesos\frmControlTablero.aspx" />
+    <Content Include="Cobranza\Procesos\Juicio.aspx" />
+    <Content Include="Cobranza\Procesos\JuicioBusca.aspx" />
+    <Content Include="Cobranza\Procesos\JuicioBuscaResponsable.aspx" />
+    <Content Include="Cobranza\Procesos\juicioestado.aspx" />
+    <Content Include="Cobranza\Procesos\LimpiaTablas.aspx" />
+    <Content Include="Cobranza\Procesos\MostrarActividades.aspx" />
+    <Content Include="Cobranza\Procesos\MostrarActividadesExhorto.aspx" />
+    <Content Include="Cobranza\Procesos\MostrarActividadesPrejudiciales.aspx" />
+    <Content Include="Cobranza\Procesos\MostrarBienRaiz.aspx" />
+    <Content Include="Cobranza\Procesos\MostrarCuotaColegio.aspx" />
+    <Content Include="Cobranza\Procesos\MostrarDocuEstandard1Consula.aspx" />
+    <Content Include="Cobranza\Procesos\MostrarDocuEstandard2Consula.aspx" />
+    <Content Include="Cobranza\Procesos\MostrarDocuEstandard3Consula.aspx" />
+    <Content Include="Cobranza\Procesos\MostrarDocuEstandard4Consula.aspx" />
+    <Content Include="Cobranza\Procesos\MostrarDocuJuicio.aspx" />
+    <Content Include="Cobranza\Procesos\MostrarDocuJuicioConsulta.aspx" />
+    <Content Include="Cobranza\Procesos\MostrarDocuMutuoConsula.aspx" />
+    <Content Include="Cobranza\Procesos\MostrarDocuPagare.aspx" />
+    <Content Include="Cobranza\Procesos\MostrarDocuPagareConsulta.aspx" />
+    <Content Include="Cobranza\Procesos\MostrarDomicilios.aspx" />
+    <Content Include="Cobranza\Procesos\MostrarfonosDeudor.aspx" />
+    <Content Include="Cobranza\Procesos\Mutuo.aspx" />
+    <Content Include="Cobranza\Procesos\Pagare.aspx" />
+    <Content Include="Cobranza\Procesos\Tablero.aspx" />
+    <Content Include="Cobranza\Procesos\TABLERO2.aspx" />
+    <Content Include="Cobranza\Procesos\TableroExcel.aspx" />
+    <Content Include="Cobranza\Pruebas\SP.aspx" />
+    <Content Include="Cobranza\Reconstitucion\BitacoraEstados.aspx" />
+    <Content Include="Cobranza\Reconstitucion\BitacoraEstadosExcel.aspx" />
+    <Content Include="Cobranza\Reconstitucion\BuscaAsignacion.aspx" />
+    <Content Include="Cobranza\Reconstitucion\BuscaReasignacion.aspx" />
+    <Content Include="Cobranza\Reconstitucion\BuscaReconstitucion.aspx" />
+    <Content Include="Cobranza\Reconstitucion\Carga.aspx" />
+    <Content Include="Cobranza\Reconstitucion\CargaManual.aspx" />
+    <Content Include="Cobranza\Reconstitucion\CargaMasiva.aspx" />
+    <Content Include="Cobranza\Reconstitucion\ConsultaGastos.aspx" />
+    <Content Include="Cobranza\Reconstitucion\Digitalizar.aspx" />
+    <Content Include="Cobranza\Reconstitucion\DocDigitalizados.aspx" />
+    <Content Include="Cobranza\Reconstitucion\ExcelBitacoraEstados.aspx" />
+    <Content Include="Cobranza\Reconstitucion\ExcelConsultaGastos.aspx" />
+    <Content Include="Cobranza\Reconstitucion\ExcelGastos.aspx" />
+    <Content Include="Cobranza\Reconstitucion\frmReconstitucion.aspx" />
+    <Content Include="Cobranza\Reconstitucion\frmReconstitucionMarca.aspx" />
+    <Content Include="Cobranza\Reconstitucion\InformeGeneral.aspx" />
+    <Content Include="Cobranza\Reconstitucion\MenuReporte.aspx" />
+    <Content Include="Cobranza\Reconstitucion\popAsignacion.aspx" />
+    <Content Include="Cobranza\Reconstitucion\popReasignar.aspx" />
+    <Content Include="Cobranza\Reconstitucion\PruebaCarga.aspx" />
+    <Content Include="Cobranza\Reconstitucion\ReconExcel.aspx" />
+    <Content Include="Cobranza\Reconstitucion\ReconstitucionGastos.aspx" />
+    <Content Include="Cobranza\Reconstitucion\ReconstitucionGastosEdicion.aspx" />
+    <Content Include="Cobranza\Reconstitucion\Reporte.aspx" />
+    <Content Include="Cobranza\Reconstitucion\ReporteOtros.aspx" />
+    <Content Include="Cobranza\Reconstitucion\ReporteOtrosMarca.aspx" />
+    <Content Include="Cobranza\Reconstitucion\ReporteReconMarca.aspx" />
+    <Content Include="Cobranza\Reconstitucion\Reversar.aspx" />
+    <Content Include="Cobranza\Reconstitucion\SubMenu.aspx" />
+    <Content Include="Cobranza\RedireccionMantenedor.aspx" />
+    <Content Include="Contacto.aspx" />
+    <Content Include="css\alc.css" />
+    <Content Include="css\alc2.css" />
+    <Content Include="css\alc_estilo.css" />
+    <Content Include="css\alc_estilo1.0.0.css" />
+    <Content Include="css\bootstrap-theme.css" />
+    <Content Include="css\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\Demandas-1.0.1.css" />
+    <Content Include="css\jquery.jqplot.min.css" />
+    <Content Include="css\menu2.gif" />
+    <Content Include="css\morris.css" />
+    <Content Include="css\redmond\images\animated-overlay.gif" />
+    <Content Include="css\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="css\redmond\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="css\redmond\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="css\redmond\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="css\redmond\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="css\redmond\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="css\redmond\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="css\redmond\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="css\redmond\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="css\redmond\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="css\redmond\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="css\redmond\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="css\redmond\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="css\redmond\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="css\redmond\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="css\redmond\jquery-ui-1.10.3.custom.css" />
+    <Content Include="css\redmond\jquery-ui-1.10.3.custom.min.css" />
+    <Content Include="css\start\images\animated-overlay.gif" />
+    <Content Include="css\start\images\ui-bg_flat_55_999999_40x100.png" />
+    <Content Include="css\start\images\ui-bg_flat_75_aaaaaa_40x100.png" />
+    <Content Include="css\start\images\ui-bg_glass_45_0078ae_1x400.png" />
+    <Content Include="css\start\images\ui-bg_glass_55_f8da4e_1x400.png" />
+    <Content Include="css\start\images\ui-bg_glass_75_79c9ec_1x400.png" />
+    <Content Include="css\start\images\ui-bg_gloss-wave_45_e14f1c_500x100.png" />
+    <Content Include="css\start\images\ui-bg_gloss-wave_50_6eac2c_500x100.png" />
+    <Content Include="css\start\images\ui-bg_gloss-wave_75_2191c0_500x100.png" />
+    <Content Include="css\start\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="css\start\images\ui-icons_0078ae_256x240.png" />
+    <Content Include="css\start\images\ui-icons_056b93_256x240.png" />
+    <Content Include="css\start\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="css\start\images\ui-icons_e0fdff_256x240.png" />
+    <Content Include="css\start\images\ui-icons_f5e175_256x240.png" />
+    <Content Include="css\start\images\ui-icons_f7a50d_256x240.png" />
+    <Content Include="css\start\images\ui-icons_fcd113_256x240.png" />
+    <Content Include="css\start\jquery-ui-1.10.3.custom.css" />
+    <Content Include="css\start\jquery-ui-1.10.3.custom.min.css" />
+    <Content Include="excel.jpeg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="images\00_avanzar_on.gif" />
+    <Content Include="images\action_print.gif" />
+    <Content Include="images\alert-icon-red-md.png" />
+    <Content Include="images\asesoria.swf" />
+    <Content Include="images\banner2.jpg" />
+    <Content Include="images\bg-menu-main.png" />
+    <Content Include="images\body.jpg" />
+    <Content Include="images\b_borrar.gif" />
+    <Content Include="images\b_editar.gif" />
+    <Content Include="images\calendar.gif" />
+    <Content Include="images\Calendar_scheduleHS.png" />
+    <Content Include="images\collapse.jpg" />
+    <Content Include="images\collapse_blue.jpg" />
+    <Content Include="images\company_logo.gif" />
+    <Content Include="images\EmptyStar.png" />
+    <Content Include="images\excel.jpeg" />
+    <Content Include="images\expand_blue.jpg" />
+    <Content Include="images\FilledStar.png" />
+    <Content Include="images\flashmo.gif" />
+    <Content Include="images\foto1.jpg" />
+    <Content Include="images\foto2.jpg" />
+    <Content Include="images\foto3.jpg" />
+    <Content Include="images\foto4.jpg" />
+    <Content Include="images\foto5.jpg" />
+    <Content Include="images\foto6.jpg" />
+    <Content Include="images\green.gif" />
+    <Content Include="images\iconos\ajax-loader.gif" />
+    <Content Include="images\iconos\ayuda.png" />
+    <Content Include="images\iconos\barcodereader.png" />
+    <Content Include="images\iconos\Buscar.png" />
+    <Content Include="images\iconos\calendar_icon.jpg" />
+    <Content Include="images\iconos\icon-poder-judicial.png" />
+    <Content Include="images\iconos\icono-warning.png" />
+    <Content Include="images\iconos\icono_abajo.png" />
+    <Content Include="images\iconos\icono_actualizar.png" />
+    <Content Include="images\iconos\icono_agregar.png" />
+    <Content Include="images\iconos\icono_arriba.png" />
+    <Content Include="images\iconos\icono_derecha.png" />
+    <Content Include="images\iconos\icono_eliminar.png" />
+    <Content Include="images\iconos\icono_espera.png" />
+    <Content Include="images\iconos\icono_izquierda.png" />
+    <Content Include="images\iconos\icono_linea_ama.png" />
+    <Content Include="images\iconos\icono_no_ok.png" />
+    <Content Include="images\iconos\icono_ok.png" />
+    <Content Include="images\iconos\icono_pdf.png" />
+    <Content Include="images\iconos\tab_seleccionado.jpg" />
+    <Content Include="images\iconos\Version.png" />
+    <Content Include="images\icono_impresora.jpg" />
+    <Content Include="images\icon_Exito.gif" />
+    <Content Include="images\icon_NoExito.gif" />
+    <Content Include="images\ico_excel.gif" />
+    <Content Include="images\indicator_blu.gif" />
+    <Content Include="images\loading.gif" />
+    <Content Include="images\logo.jpg" />
+    <Content Include="images\logo_animado.gif" />
+    <Content Include="images\lupa.jpg" />
+    <Content Include="images\mapa.JPG" />
+    <Content Include="images\menu2.gif" />
+    <Content Include="images\pcs.jpg" />
+    <Content Include="images\peso.jpg" />
+    <Content Include="images\red.gif" />
+    <Content Include="images\subir.jpg" />
+    <Content Include="images\telefonista.jpg" />
+    <Content Include="images\templatemo.gif" />
+    <Content Include="images\templatemo_footer_bottom.gif" />
+    <Content Include="images\templatemo_heading_background.jpg" />
+    <Content Include="images\templatemo_leftsection_bottom.gif" />
+    <Content Include="images\templatemo_leftsection_top.gif" />
+    <Content Include="images\templatemo_list_icon01.gif" />
+    <Content Include="images\templatemo_list_icon02.gif" />
+    <Content Include="images\templatemo_livechat.gif" />
+    <Content Include="images\templatemo_logo_background.gif" />
+    <Content Include="images\templatemo_menuhover_background.gif" />
+    <Content Include="images\templatemo_menu_background.gif" />
+    <Content Include="images\templatemo_readmore.gif" />
+    <Content Include="images\templatemo_rightsection_background.gif" />
+    <Content Include="images\templatemo_rightsection_top.gif" />
+    <Content Include="images\templatemo_section2_title.gif" />
+    <Content Include="images\trabajando.gif" />
+    <Content Include="index.aspx" />
+    <Content Include="Indice.aspx" />
+    <Content Include="Indice.html" />
+    <Content Include="js\alcsa-1.0.0.js" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\Calendar\calendar-setup.js" />
+    <Content Include="js\Calendar\calendar-win2k-cold-1.css" />
+    <Content Include="js\Calendar\calendar.js" />
+    <Content Include="js\Calendar\lang\calendar-en.js" />
+    <Content Include="js\datepicker-es.js" />
+    <Content Include="js\Demandas-1.0.1.js" />
+    <Content Include="js\funciones.js" />
+    <Content Include="js\jqplot\excanvas.js" />
+    <Content Include="js\jqplot\excanvas.min.js" />
+    <Content Include="js\jqplot\jquery.jqplot.js" />
+    <Content Include="js\jqplot\jquery.jqplot.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.barRenderer.js" />
+    <Content Include="js\jqplot\plugins\jqplot.barRenderer.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.BezierCurveRenderer.js" />
+    <Content Include="js\jqplot\plugins\jqplot.BezierCurveRenderer.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.blockRenderer.js" />
+    <Content Include="js\jqplot\plugins\jqplot.blockRenderer.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.bubbleRenderer.js" />
+    <Content Include="js\jqplot\plugins\jqplot.bubbleRenderer.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.canvasAxisLabelRenderer.js" />
+    <Content Include="js\jqplot\plugins\jqplot.canvasAxisLabelRenderer.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.canvasAxisTickRenderer.js" />
+    <Content Include="js\jqplot\plugins\jqplot.canvasAxisTickRenderer.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.canvasOverlay.js" />
+    <Content Include="js\jqplot\plugins\jqplot.canvasOverlay.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.canvasTextRenderer.js" />
+    <Content Include="js\jqplot\plugins\jqplot.canvasTextRenderer.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.categoryAxisRenderer.js" />
+    <Content Include="js\jqplot\plugins\jqplot.categoryAxisRenderer.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.ciParser.js" />
+    <Content Include="js\jqplot\plugins\jqplot.ciParser.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.cursor.js" />
+    <Content Include="js\jqplot\plugins\jqplot.cursor.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.dateAxisRenderer.js" />
+    <Content Include="js\jqplot\plugins\jqplot.dateAxisRenderer.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.donutRenderer.js" />
+    <Content Include="js\jqplot\plugins\jqplot.donutRenderer.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.dragable.js" />
+    <Content Include="js\jqplot\plugins\jqplot.dragable.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.enhancedLegendRenderer.js" />
+    <Content Include="js\jqplot\plugins\jqplot.enhancedLegendRenderer.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.funnelRenderer.js" />
+    <Content Include="js\jqplot\plugins\jqplot.funnelRenderer.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.highlighter.js" />
+    <Content Include="js\jqplot\plugins\jqplot.highlighter.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.json2.js" />
+    <Content Include="js\jqplot\plugins\jqplot.json2.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.logAxisRenderer.js" />
+    <Content Include="js\jqplot\plugins\jqplot.logAxisRenderer.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.mekkoAxisRenderer.js" />
+    <Content Include="js\jqplot\plugins\jqplot.mekkoAxisRenderer.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.mekkoRenderer.js" />
+    <Content Include="js\jqplot\plugins\jqplot.mekkoRenderer.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.meterGaugeRenderer.js" />
+    <Content Include="js\jqplot\plugins\jqplot.meterGaugeRenderer.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.mobile.js" />
+    <Content Include="js\jqplot\plugins\jqplot.mobile.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.ohlcRenderer.js" />
+    <Content Include="js\jqplot\plugins\jqplot.ohlcRenderer.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.pieRenderer.js" />
+    <Content Include="js\jqplot\plugins\jqplot.pieRenderer.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.pointLabels.js" />
+    <Content Include="js\jqplot\plugins\jqplot.pointLabels.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.pyramidAxisRenderer.js" />
+    <Content Include="js\jqplot\plugins\jqplot.pyramidAxisRenderer.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.pyramidGridRenderer.js" />
+    <Content Include="js\jqplot\plugins\jqplot.pyramidGridRenderer.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.pyramidRenderer.js" />
+    <Content Include="js\jqplot\plugins\jqplot.pyramidRenderer.min.js" />
+    <Content Include="js\jqplot\plugins\jqplot.trendline.js" />
+    <Content Include="js\jqplot\plugins\jqplot.trendline.min.js" />
+    <Content Include="js\jquery-1.10.2.min.js" />
+    <Content Include="js\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="js\jquery.Rut.js" />
+    <Content Include="js\jquery.scannerdetection.compatibility.js" />
+    <Content Include="js\jquery.scannerdetection.js" />
+    <Content Include="js\modernizr-2.5.3-respond-1.1.0.min.js" />
+    <Content Include="js\morris.js" />
+    <Content Include="js\npm.js" />
+    <Content Include="js\raphael-2.0.2.min.js" />
+    <Content Include="LectorCodigo.aspx" />
+    <Content Include="principal\animacion1.swf" />
+    <Content Include="principal\Clientes.aspx" />
+    <Content Include="principal\Cobertura.aspx" />
+    <Content Include="principal\contacto.aspx" />
+    <Content Include="principal\Equipo.aspx" />
+    <Content Include="principal\Menu.aspx" />
+    <Content Include="principal\QuienesSomos.aspx" />
+    <Content Include="principal\Servicios.aspx" />
+    <Content Include="principal\ServiciosDetalle.aspx" />
+    <Content Include="principal\SolicitudDocuemntos.aspx" />
+    <Content Include="principal\WebForm1.aspx" />
+    <Content Include="Requerimientos\Listado.aspx" />
+    <Content Include="Requerimientos\Mantenedor.aspx" />
+    <Content Include="Scripts\AC_RunActiveContent.js" />
+    <Content Include="Servicios\ListadosAutocompletar.svc" />
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cobranza\CargasMasivas\Temporal\Prueba Carga Masiva.xlsx" />
+    <Content Include="css\bootstrap-theme.css.map" />
+    <Content Include="css\bootstrap.css.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Formatos\Principal.Master" />
+    <Content Include="images\iconos\vssver2.scc" />
+    <Content Include="masters\Master.Master" />
+    <Content Include="masters\Menu.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+    <Content Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ALCGLOBAL\ALCGLOBAL.csproj">
+      <Project>{59ba6bc0-0248-4af8-95c3-4c48ffd02dfa}</Project>
+      <Name>ALCGLOBAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ALCSA.Entidades\ALCSA.Entidades.csproj">
+      <Project>{f6a0b5e6-fafe-4c64-a0b5-0781ec6c4d5b}</Project>
+      <Name>ALCSA.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ALCSA.FWK\ALCSA.FWK.csproj">
+      <Project>{228ec718-2c40-4b78-93f7-5f05bb4b9dda}</Project>
+      <Name>ALCSA.FWK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ALCSA.Negocio\ALCSA.Negocio.csproj">
+      <Project>{c2e535c2-2a77-4dbb-af79-9851efc9485c}</Project>
+      <Name>ALCSA.Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:32669/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

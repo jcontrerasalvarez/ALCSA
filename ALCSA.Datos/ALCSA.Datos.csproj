@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC022969-22A6-4E5E-96E0-3CF29D3EB4BC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ALCSA.Datos</RootNamespace>
+    <AssemblyName>ALCSA.Datos</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abonos\AbonoCheque.cs" />
+    <Compile Include="Abonos\Lista.cs" />
+    <Compile Include="AdministracionSitio\Usuario.cs" />
+    <Compile Include="Alzamientos\Actividad.cs" />
+    <Compile Include="Alzamientos\Alzamiento.cs" />
+    <Compile Include="Alzamientos\AlzamientoActividad.cs" />
+    <Compile Include="Alzamientos\EstadoAlzamiento.cs" />
+    <Compile Include="Alzamientos\Observacion.cs" />
+    <Compile Include="Alzamientos\Remesa.cs" />
+    <Compile Include="CallCenter\AdicionalComentario.cs" />
+    <Compile Include="CallCenter\Campana.cs" />
+    <Compile Include="CallCenter\CampanaCobranza.cs" />
+    <Compile Include="CallCenter\Comentario.cs" />
+    <Compile Include="CallCenter\Disposicion.cs" />
+    <Compile Include="CallCenter\TipoDisposicion.cs" />
+    <Compile Include="CargasMasivas\Proceso.cs" />
+    <Compile Include="Cobranzas\ActividadExhorto.cs" />
+    <Compile Include="Cobranzas\Bitacora.cs" />
+    <Compile Include="Cobranzas\Cobranza.cs" />
+    <Compile Include="Cobranzas\CuotaColegio.cs" />
+    <Compile Include="Cobranzas\DocumentoEstandard1.cs" />
+    <Compile Include="Cobranzas\DocumentoEstandard2.cs" />
+    <Compile Include="Cobranzas\DocumentoEstandard3.cs" />
+    <Compile Include="Cobranzas\DocumentoEstandard4.cs" />
+    <Compile Include="Cobranzas\DocumentoJuicio.cs" />
+    <Compile Include="Cobranzas\DocumentoPagare.cs" />
+    <Compile Include="Cobranzas\Mutuo.cs" />
+    <Compile Include="Cobranzas\Remesa.cs" />
+    <Compile Include="Conexion.cs" />
+    <Compile Include="Deudor.cs" />
+    <Compile Include="Documentos\CobranzaLista.cs" />
+    <Compile Include="Documentos\DatosFormatos\Juicio.cs" />
+    <Compile Include="Documentos\Fisicos\Documento.cs" />
+    <Compile Include="Documentos\Fisicos\Identificador.cs" />
+    <Compile Include="Documentos\Fisicos\TipoDocumento.cs" />
+    <Compile Include="Documentos\Fisicos\TipoIdentificador.cs" />
+    <Compile Include="Domicilio.cs" />
+    <Compile Include="Gastos\Gasto.cs" />
+    <Compile Include="Gestion\ControlRiesgo.cs" />
+    <Compile Include="Gestion\Metricas\Avance.cs" />
+    <Compile Include="Gestion\Metricas\Cliente.cs" />
+    <Compile Include="Gestion\Metricas\ParametroGeneral.cs" />
+    <Compile Include="Gestion\Metricas\PlazoCobranzaCliente.cs" />
+    <Compile Include="Gestion\Metricas\PlazoCobranzaTramite.cs" />
+    <Compile Include="Gestion\Metricas\Procurador.cs" />
+    <Compile Include="Juicios\ActividadJudicial.cs" />
+    <Compile Include="Juicios\Juicio.cs" />
+    <Compile Include="Juicios\Listado.cs" />
+    <Compile Include="Juicios\Riesgo.cs" />
+    <Compile Include="Procuradores\Metas\Meta.cs" />
+    <Compile Include="Procuradores\Procurador.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Requerimientos\Estado.cs" />
+    <Compile Include="Requerimientos\HistoricoRequerimiento.cs" />
+    <Compile Include="Requerimientos\Observacion.cs" />
+    <Compile Include="Requerimientos\Requerimiento.cs" />
+    <Compile Include="Requerimientos\Usuario.cs" />
+    <Compile Include="ServiciosJson\ListadorConceptos.cs" />
+    <Compile Include="Temporales\Temporal.cs" />
+    <Compile Include="Tramites\SubTramite.cs" />
+    <Compile Include="Tramites\Tramite.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ALCSA.Entidades\ALCSA.Entidades.csproj">
+      <Project>{f6a0b5e6-fafe-4c64-a0b5-0781ec6c4d5b}</Project>
+      <Name>ALCSA.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ALCSA.FWK\ALCSA.FWK.csproj">
+      <Project>{228ec718-2c40-4b78-93f7-5f05bb4b9dda}</Project>
+      <Name>ALCSA.FWK</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

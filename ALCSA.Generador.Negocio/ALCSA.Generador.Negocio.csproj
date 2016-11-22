@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C6A8008D-6429-4BBF-A9E7-EE72CF91446A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ALCSA.Generador.Negocio</RootNamespace>
+    <AssemblyName>ALCSA.Generador.Negocio</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseGenerador.cs" />
+    <Compile Include="BD\GeneradorSP.cs" />
+    <Compile Include="BD\Nomenclatura.cs" />
+    <Compile Include="BD\Tabla.cs" />
+    <Compile Include="Capas\GeneradorDatos.cs" />
+    <Compile Include="Capas\GeneradorEntidad.cs" />
+    <Compile Include="Capas\GeneradorNegocio.cs" />
+    <Compile Include="Capas\GeneradorPresentacion.cs" />
+    <Compile Include="Capas\Nomenclatura.cs" />
+    <Compile Include="GeneradorPieza.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BD\vssver2.scc" />
+    <None Include="Capas\vssver2.scc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ALCSA.FWK\ALCSA.FWK.csproj">
+      <Project>{228ec718-2c40-4b78-93f7-5f05bb4b9dda}</Project>
+      <Name>ALCSA.FWK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ALCSA.Generador.Datos\ALCSA.Generador.Datos.csproj">
+      <Project>{d804f41e-20ae-4d28-874b-43d3e2e9b1bd}</Project>
+      <Name>ALCSA.Generador.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ALCSA.Generador.Entidades\ALCSA.Generador.Entidades.csproj">
+      <Project>{bf02626e-1eb6-45b3-81db-e67502492ee4}</Project>
+      <Name>ALCSA.Generador.Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
